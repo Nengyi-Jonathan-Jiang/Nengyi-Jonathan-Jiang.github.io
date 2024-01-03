@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            @font-face {
+                font-family: 'JetBrains Mono';
+                src: url('JetBrainsMono-Regular.woff2');
+            }
+
+            * {
+                font-family: 'JetBrains Mono', monospace;
+            }
+
+            body {
+                background: black;
+                color: white;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            section {
+                width: calc(100vw - 60px);
+                max-width: 800px;
+                position: relative;
+            }
+
+            a {
+                color: #0f2;
+                font-weight: normal;
+            }
+
+            p, span {
+                font-size: 11pt;
+            }
+
+            ul {
+                list-style-type: none;
+                padding-inline-start: 0;
+                padding-inline-end: 0;
+            }
+
+            h2 {
+                text-decoration: underline;
+            }
+
+            h3 {
+                margin-top: 0;
+                font-size: 18px;
+            }
+
+            li {
+                outline: 1px solid white;
+                padding: 10px;
+                margin-bottom: 20px;
+                position: relative;
+                text-align: justify;
+            }
+
+            li>a.link-to-project {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                display: block;
+                width: 10pt;
+                height: 10pt;
+                background-image: url("link.png");
+                background-size: cover;
+            }
+
+            img#pfp {
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="name">
+            <h1> NJonathanJiang <span>(Nengyi J. Jiang)</span></h1>
+            <img src="https://avatars.githubusercontent.com/u/89473479?v=4" alt="No image :(" id="pfp">
+        </section>
+        <section id="contact">
+            <h2> Contact </h2>
+            <span>Email: n.jonathan.jiang@gmail.com</span> <br>
+            <span>Phone: 123-456-7890</span>
+        </section>
+        <section>
+            <h2> Education </h2>
+            <span> <a href="https://www.katyisd.org/SLHS " target="_blank">Seven Lakes High School</a> </span>
+        </section>
+        <section>
+            <h2> Experience: </h2>
+            <p>
+                I have been programing in Python for 8 years, Java for 6 years,
+                HTML/CSS/JS for 5 years, and C++ for 5 years. In addition, I
+                have some experience with C#, Rust, Lisp, MATLAB, and a few other
+                languages.
+            </p>
+        </section>
+        <section>
+            <h2>Profiles</h2>
+            <p>
+                Warning: Here be dragons! I have dozens of half-finished projects
+                all over the place. See the next section for a list of my best
+                projects.
+            </p>
+            <p>My GitHub profile: <a href="https://github.com/Nengyi-Jonathan-Jiang/ " target="_blank">Nengyi-Jonathan-Jiang</a></p>
+            <p>My Replit profile: <a href="https://replit.com/@theNerdyMango/ " target="_blank">@theNerdyMango</a></p>
+        </section>
+        <section>
+            <h2>Favorite Projects (in no particular order):</h2>
+            <ul>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/Dysprosium " target="_blank">Dysprosium</a></h3>
+                    <p>
+                        My latest project. I am working on a full lexer + parser
+                        + optimizer + code generator + virtual machine for a new
+                        language I came up with, Dysprosium (I picked the name
+                        because it sounds cool, and it hasn't been used for much
+                        yet). Features a fully generic lexer (with a Regex -> NFA
+                        -> DFA compiler), a fully generic parser (built on the
+                        LR(1) parsing algorithm), a virtual machine (DysVM), etc.
+                        The language itself draws inspiration from C++, with
+                        memory safety mechanisms similar to Rust.
+                    </p>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/mitosis " target="_blank">Reaction-Diffusion simulator</a></h3>
+                    <p>
+                        A really cool simulation that I worked on. You can control the
+                        reaction parameters (reaction rate, diffusion radius, diffusion
+                        rates, feed rate, remove rate, etc.) and the speed of the
+                        simulation (steps per frame). For some combinations of
+                        parameters, complex structures reminiscent of cellular division
+                        can occur. I used compute shaders in WebGL to calculate the
+                        steps of the simulation.
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/mitosis/" class="link-to-project"  target="_blank"></a>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/3body " target="_blank">Three body simulator</a></h3>
+                    <p>
+                        Another really cool simulation that I worked on. Simulates
+                        three massive stars in 3d space interacting through gravity.
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/3body/" class="link-to-project"  target="_blank"></a>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/mather/ " target="_blank">Display Math</a></h3>
+                    <p>
+                        Math display thing I made, a bit similar to LaTeX. Not much more
+                        to be said about it. It's kinda janky and does weird stuff
+                        sometimes, but those are totally features, not bugs.
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/mather/" class="link-to-project"  target="_blank"></a>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/Go-Capy-Go " target="_blank">Go Capy Go!</a></h3>
+                    <p>
+                        A retro-style platformer/puzzle game. Get the capybara to the
+                        candy! I made this with the help of
+                        <a href="https://github.com/EvuhLi " target="_blank">Eva Li</a>,
+                        <a href="https://github.com/RouRai " target="_blank">Rounak Rai</a>, and
+                        <a href="https://github.com/Santiago11234 " target="_blank">Santiago Espinoza</a>
+                        for a game jam. Warning: has sound.
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/Go-Capy-Go/" class="link-to-project"  target="_blank"></a>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/Five-in-a-row-web " target="_blank">Five in a row (Gomoku, 五子棋)</a></h3>
+                    <p>
+                        A classic board game. Get five stones in a row! The AI I made
+                        for this (classic techniques, no neural networks) is hard, but
+                        beatable. Good luck.
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/Five-in-a-row-web/" class="link-to-project"  target="_blank"></a>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/Hua-Rong-Dao-Klotski " target="_blank">Klotski (华容道)</a></h3>
+                    <p>
+                        A chinese sliding puzzle. Get the big piece labeled 曹 to the
+                        bottom. These puzzles are harder than they looks -- many require
+                        50+ moves, with the last one requiring more than 130!
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/Hua-Rong-Dao-Klotski/" class="link-to-project"  target="_blank"></a>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/Rush-Hour " target="_blank">Rush Hour</a></h3>
+                    <p>
+                        A Rush Hour game made with the Unity Game Engine. Pretty self-explanatory.
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/Rush-Hour/" class="link-to-project"  target="_blank"></a>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/Maze-CS-Unity " target="_blank">Maze Game</a></h3>
+                    <p>
+                        A maze game featuring keys and obstacles. All levels are randomly
+                        generated, so some may be easier than others. However, all are
+                        guaranteed solvable.
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/Maze-CS-Unity/" class="link-to-project"  target="_blank"></a>
+                </li>
+                <li>
+                    <h3><a href="https://github.com/Nengyi-Jonathan-Jiang/Untitled-Game/ " target="_blank">Circle good, Square bad</a></h3>
+                    <p>
+                        A bullet hell game. Eat the circles and avoid everything else! Best
+                        played on a touchscreen device, although mouse is okay. Touchpad
+                        highly discouraged.
+                    </p>
+                    <a href="https://nengyi-jonathan-jiang.github.io/Untitled-Game/" class="link-to-project"  target="_blank"></a>
+                </li>
+            </ul>
+        </section>
+    </body>
+</html>
