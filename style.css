@@ -82,7 +82,9 @@ img#pfp {
 
 /* Customize the label (the#page-select>label) */
 #page-select>label {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     cursor: pointer;
     font-size: 11pt;
