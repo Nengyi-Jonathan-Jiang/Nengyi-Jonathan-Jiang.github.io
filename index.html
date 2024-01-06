@@ -20,18 +20,32 @@
                 <label for="projects-btn">
                     Projects
                 </label>
+                <input type="radio" name="page-select-buttons" id="clicky-btn">
+                <label for="clicky-btn">
+                    Clicky Stuffs
+                </label>
             </div>
         </section>
         <div id="sliding-pages">
             <div>
                 <section>
-                    <h2> Contact </h2>
-                    <span>Email: n.jonathan.jiang@gmail.com</span> <br>
-                    <span>Phone: 123-456-7890</span>
+                    <h2> About me </h2>
+                    <p>
+                        I am a <span data-replace="janky robot">programmer nerd</span>
+                        who primarily enjoys making dozens of weird and interesting projects,
+                        <span data-replace="never">sometimes</span>
+                        managing to finish them. I also enjoy listening to, playing, and
+                        composing music. I try my best to touch grass and interact with society
+                        <span data-replace="once in a blue moon">as much as possible</span>.
+                    </p>
                 </section>
                 <section>
                     <h2> Education </h2>
-                    <span> <a tabindex="-1" href="https://www.katyisd.org/SLHS " target="_blank">Seven Lakes High School</a> </span>
+                    <p>
+                        I am a junior at
+                        <a tabindex="-1" href="https://www.katyisd.org/SLHS " target="_blank">Seven Lakes High School</a>.
+
+                    </p>
                 </section>
                 <section>
                     <h2> Experience </h2>
@@ -42,20 +56,10 @@
                         languages.
                     </p>
                 </section>
-                <section>
-                    <h2>Profiles</h2>
-                    <p>
-                        Warning: Here be dragons! I have dozens of half-finished projects
-                        all over the place. See the next section for a list of my best
-                        projects.
-                    </p>
-                    <p>My GitHub profile: <a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/ " target="_blank">Nengyi-Jonathan-Jiang</a></p>
-                    <p>My Replit profile: <a tabindex="-1" href="https://replit.com/@theNerdyMango/ " target="_blank">@theNerdyMango</a></p>
-                </section>
             </div>
             <div>
                 <section>
-                    <h2>Favorite Projects (in no particular order):</h2>
+                    <h2>My favorite projects</h2>
                     <ul>
                         <li>
                             <h3><a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/Dysprosium " target="_blank">Dysprosium</a></h3>
@@ -109,7 +113,7 @@
                                 <a tabindex="-1" href="https://github.com/EvuhLi " target="_blank">Eva Li</a>,
                                 <a tabindex="-1" href="https://github.com/RouRai " target="_blank">Rounak Rai</a>, and
                                 <a tabindex="-1" href="https://github.com/Santiago11234 " target="_blank">Santiago Espinoza</a>
-                                for a game jam. Warning: has sound.
+                                for a game jam.
                             </p>
                             <a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/Go-Capy-Go/" class="link-to-project"  target="_blank"></a>
                         </li>
@@ -159,6 +163,22 @@
                     </ul>
                 </section>
             </div>
+            <div>
+                <section>
+                    <h2> Contact </h2>
+                    <span>Email: n.jonathan.jiang@gmail.com</span> <br>
+                    <span>Phone: 123-456-7890</span>
+                </section>
+                <section>
+                    <h2>Profiles</h2>
+                    <p>
+                        See the projects tab for a selected list of my projects that are in a
+                        half-presentable state.
+                    </p>
+                    <p>My GitHub profile: <a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/ " target="_blank">Nengyi-Jonathan-Jiang</a></p>
+                    <p>My Replit profile: <a tabindex="-1" href="https://replit.com/@theNerdyMango/ " target="_blank">@theNerdyMango</a></p>
+                </section>
+            </div>
         </div>
 
         <script>
@@ -168,7 +188,7 @@
 
             function updatePages(pageNumber = 0) {
                 document.body.style.setProperty('--page-number', `${pageNumber}`);
-                document.querySelectorAll('a').forEach(i => i.tabIndex = -1);
+                document.querySelectorAll('a').forEach(i => i.setAttribute('tabindex', '-1'));
                 document.querySelectorAll(`#sliding-pages>div:nth-child(${pageNumber + 1}) a`).forEach(i => i.tabIndex = 0);
             }
 
@@ -182,6 +202,8 @@
 
                 updatePages(pageNumber);
             };
+
+            updatePages(0);
         </script>
     </body>
 </html>

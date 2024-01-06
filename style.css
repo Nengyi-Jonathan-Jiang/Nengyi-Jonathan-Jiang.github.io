@@ -13,6 +13,11 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: justify;
+    line-height: 1.2;
+
+    --hacker-green: #00ff22;
+    --dark-grey: #181818;
 }
 
 section {
@@ -22,7 +27,7 @@ section {
 }
 
 a {
-    color: #0f2;
+    color: var(--hacker-green);
     font-weight: normal;
 }
 
@@ -37,7 +42,7 @@ ul {
 }
 
 h2 {
-    text-decoration: underline;
+    border-bottom: 1px solid white;
 }
 
 h3 {
@@ -50,7 +55,6 @@ li {
     padding: 10px;
     margin-bottom: 20px;
     position: relative;
-    text-align: justify;
 }
 
 li>a.link-to-project {
@@ -170,4 +174,26 @@ body{
     syntax: "<number>";
     inherits: true;
     initial-value: 0;
+}
+
+[data-replace] {
+    position: relative;
+    text-decoration: var(--dark-grey) underline 1px;
+    padding: 0 2px;
+    margin: 0 -2px;
+}
+
+[data-replace]:hover {
+    color: transparent;
+}
+
+[data-replace]:hover::after {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    font-size: 11pt;
+    color: white;
+    content: attr(data-replace);
+    white-space: nowrap;
 }
