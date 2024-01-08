@@ -28,12 +28,21 @@ section {
 
 a {
     color: var(--hacker-green);
+    text-decoration: none;
     font-weight: normal;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 p, span {
     font-size: 11pt;
 }
+
+p { margin-top: 15px; margin-bottom: 15px; }
+p:first-child { margin-top: 5px; }
+p:last-child { margin-bottom: 5px; }
 
 ul {
     list-style-type: none;
@@ -53,6 +62,7 @@ h3 {
 li {
     outline: 1px solid white;
     padding: 10px;
+    padding-bottom: 5px;
     margin-bottom: 20px;
     position: relative;
 }
@@ -96,6 +106,10 @@ img#pfp {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+#page-select>label:hover {
+    text-decoration: underline;
 }
 
 /* Hide the browser's default radio button */
@@ -198,4 +212,15 @@ body{
     color: white;
     content: attr(data-replace);
     white-space: nowrap;
+}
+
+h3.game-project::after {
+    content: "Game";
+    margin-left: 10px;
+    font-size: 10pt;
+    outline: 1px solid white;
+    color: white;
+    border-radius: 9pt;
+    padding: 1pt 4pt;
+    vertical-align: 1pt;
 }
