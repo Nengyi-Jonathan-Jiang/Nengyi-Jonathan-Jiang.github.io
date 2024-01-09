@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Home</title>
+
+    <!--External libraries-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <!--End libraries-->
+
+    <link rel="stylesheet" href="../base.css" type="text/css">
+    <link rel="stylesheet" href="../override.css" type="text/css">
+</head>
+<body data-override>
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="navbar-brand">
+            <img src="../pfp.png" alt="No image :(" id="pfp">
+            <h1> NJonathanJiang
+                <span>(Nengyi J. Jiang)</span>
+            </h1>
+        </div>
+        <div id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="education.html">Education</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="awards.html">Awards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div id="sliding-pages">
+    <section>
+        <h2> Awards </h2>
+        <p>
+            I'm a lame guy. I don't have any real awards, so here are some fake ones.
+        </p>
+        <ul>
+            <li>
+                <h3> Nerd award </h3>
+                <p class="mb-0"> I'm a nerd. </p>
+            </li>
+            <li>
+                <h3> Robot award </h3>
+                <p class="mb-0">
+                    I'm literally a robot. My skin is made of bronze and my bones
+                    are made of steel. Speak to me in binary and I will respond.
+                </p>
+            </li>
+            <li>
+                <h3> Banana award </h3>
+                <p class="mb-0"> Bananas are cool. I like bananas. My spine is shaped like a banana. </p>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<script>
+    function update() {
+        if (sessionStorage.getItem('use-override-bootstrap') === 'true') delete document.body.dataset['override'];
+        else document.body.dataset['override'] = '';
+    }
+
+    function toggleBootstrapOverrides() {
+        sessionStorage.setItem('use-override-bootstrap', (
+            'use-override-bootstrap' in sessionStorage && sessionStorage.getItem('use-override-bootstrap') === 'true'
+        ) ? 'false' : 'true')
+        update();
+    }
+
+    update();
+    document.getElementById('pfp').oncontextmenu = _ => {
+        toggleBootstrapOverrides();
+        _.preventDefault()
+    }
+</script>
+</body>
+</html>
