@@ -1,8 +1,10 @@
 (done) add navbar
 (done) add badge
+(done) add alert
 TODO: add modal (for projects)
 TODO: add cards (for projects)
 TODO: add buttons (open modal for project)
 TODO: add form on contact page
 TODO: add tooltips
-TODO: add collapses
+
+TODO: finish bootstrap-ify-ing everything

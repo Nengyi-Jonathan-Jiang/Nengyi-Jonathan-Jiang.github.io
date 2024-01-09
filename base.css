@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito');
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('JetBrainsMono-Regular.woff2');
+}
+
+* { box-sizing: border-box }
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    line-height: 1.2;
+
+    --bs-body-font-family: Nunito, sans-serif;
+}
+
+header, section {
+    width: calc(100vw - 60px);
+    max-width: 700px;
+    position: relative;
+}
+
+a { text-decoration: none }
+
+img#pfp {
+    border-radius: 50%;
+
+    height: 50px;
+    margin-right: 10px;
+}
+
+h1, h2 { font-size: 24px; font-weight: bold }
+
+h3 { font-size: 18px; display: flex; align-items: center }
+
+div, p, span { font-size: 14px }
+
+a.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: #444;
+}
+
+#navbarNav { flex-grow: 1 !important }
+.navbar-nav { flex-direction: row !important; justify-content: end !important }
+.nav-link { padding: 7px !important }
+
+.navbar-brand>h1>span { display: block }
+
+.badge.badge-secondary {
+    background: #0088ff;
+    margin-left: 4px;
+    user-select: none;
+}

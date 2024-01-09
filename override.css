@@ -1,65 +1,81 @@
-@font-face {
-    font-family: 'JetBrains Mono';
-    src: url('JetBrainsMono-Regular.woff2');
+
+body[data-override] * {
+    font-family: "JetBrains Mono", monospace;
 }
 
-* {
-    font-family: 'JetBrains Mono', monospace;
-}
-
-body {
+body[data-override] {
     background: black;
     color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: justify;
-    line-height: 1.2;
 
     --hacker-green: #00ff22;
     --dark-grey: #181818;
+
+    height: 100vh;
+    overflow: hidden;
 }
 
-section {
-    width: calc(100vw - 60px);
-    max-width: 700px;
-    position: relative;
-}
-
-a {
+body[data-override] a {
     color: var(--hacker-green);
     text-decoration: none;
     font-weight: normal;
 }
 
-a:hover {
+body[data-override] a:hover {
+    color: var(--hacker-green);
     text-decoration: underline;
 }
 
-p, span {
-    font-size: 11pt;
+body[data-override] nav.navbar.navbar-expand-lg {
+    flex-direction: column;
+    align-items:    start;
 }
 
-p { margin-top: 15px; margin-bottom: 15px; }
-p:first-child { margin-top: 5px; }
-p:last-child { margin-bottom: 5px; }
+body[data-override] #navbarNav, body[data-override] .navbar-nav { width: 100% }
+body[data-override] .nav-item {
+    padding: 0; margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 14px;
+    outline: none;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    flex-basis: 1px;
+    position: relative;
+}
+body[data-override] .nav-item.active>a.nav-link::after {
+    content: "";
+    display: block; width: calc(100% + 12px); height: 100%; top: 0; left: -6px;
+    position: absolute;
 
-ul {
+    outline: 1px solid white;
+    outline-offset: -6px;
+    text-decoration: none !important;
+}
+body[data-override] header a {
+    color: white !important;
+}
+
+
+body[data-override] p { margin-top: 15px; margin-bottom: 15px; }
+body[data-override] p:first-child { margin-top: 5px; }
+body[data-override] p:last-child { margin-bottom: 5px; }
+
+body[data-override] ul {
     list-style-type: none;
     padding-inline-start: 0;
     padding-inline-end: 0;
 }
 
-h2 {
+body[data-override] h2 {
     border-bottom: 1px solid white;
 }
 
-h3 {
+body[data-override] h3 {
     margin-top: 0;
     font-size: 18px;
 }
 
-li {
+body[data-override] li {
     outline: 1px solid white;
     padding: 10px;
     padding-bottom: 5px;
@@ -67,7 +83,7 @@ li {
     position: relative;
 }
 
-li>a.link-to-project {
+body[data-override] li>a.link-to-project {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -78,11 +94,7 @@ li>a.link-to-project {
     background-size: cover;
 }
 
-img#pfp {
-    border-radius: 50%;
-}
-
-#page-select {
+body[data-override] #page-select {
     display: flex;
     flex-grow: 1;
     position: relative;
@@ -91,7 +103,7 @@ img#pfp {
 }
 
 /* Customize the label (the#page-select>label) */
-#page-select>label {
+body[data-override] #page-select>label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,12 +120,12 @@ img#pfp {
     user-select: none;
 }
 
-#page-select>label:hover {
+body[data-override] #page-select>label:hover {
     text-decoration: underline;
 }
 
 /* Hide the browser's default radio button */
-#page-select>input {
+body[data-override] #page-select>input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -121,7 +133,7 @@ img#pfp {
     width: 0;
 }
 
-#page-select::after {
+body[data-override] #page-select::after {
     content: "";
     position: absolute;
     display: block;
@@ -132,34 +144,23 @@ img#pfp {
     left: calc(-6px + 100% / var(--num-pages) * var(--page-number));
 }
 
-h1 {
+body[data-override] h1 {
     margin-top: 10px;
     margin-bottom:10px;
 }
 
-h1>div {
+body[data-override] h1>div {
     font-size: 11pt;
 }
 
-#left {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-}
-
-.header>*{
+body[data-override] .header>*{
     flex-grow: 0;
 }
 
-img#pfp {
-    height: 50px;
-    margin-right: 10px;
-}
-
-body {
+body[data-override] body{
     --page-number: 0;
     --num-pages: 1;
-    margin: 0; padding: 13px;
+    margin: 0; padding: 0;
     position: absolute; top: 0; left: 0;
     width: 100vw;
     height: 100vh;
@@ -167,12 +168,12 @@ body {
     transition: --page-number .5s;
 }
 
-#sliding-pages {
+body[data-override] #sliding-pages {
     width: calc(var(--num-pages) * 100vw);
     display: flex;
     overflow-x: hidden;
 }
-#sliding-pages>div {
+body[data-override] #sliding-pages>div {
     width: 100vw;
     min-width: 100vw;
     display: flex;
@@ -182,7 +183,7 @@ body {
     overflow-y: scroll;
 }
 
-#sliding-pages>div::-webkit-scrollbar {
+body[data-override] #sliding-pages>div::-webkit-scrollbar {
     display: none;
 }
 
@@ -192,18 +193,18 @@ body {
     initial-value: 0;
 }
 
-[data-replace] {
+body[data-override] [data-replace] {
     position: relative;
     text-decoration: var(--dark-grey) underline 1px;
     padding: 0 2px;
     margin: 0 -2px;
 }
 
-[data-replace]:hover {
+body[data-override] [data-replace]:hover {
     color: transparent;
 }
 
-[data-replace]:hover::after {
+body[data-override] [data-replace]:hover::after {
     position: absolute;
     width: 100%;
     text-align: center;
@@ -214,7 +215,7 @@ body {
     white-space: nowrap;
 }
 
-h3.game-project::after {
+body[data-override] h3.game-project::after {
     content: "Game";
     margin-left: 10px;
     font-size: 10pt;
