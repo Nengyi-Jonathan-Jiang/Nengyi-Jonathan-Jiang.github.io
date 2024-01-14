@@ -3,20 +3,38 @@ body[data-override] * {
 }
 
 body[data-override] {
-    background: black;
-    color: white;
+    background:     black;
+    color:          white;
 
     --hacker-green: #00ff22;
-    --dark-grey: #181818;
+    --dark-grey:    #181818;
 }
 
+body[data-override] :is(input,textarea,button) {
+    background: none !important;
+    color: white !important;
+    outline: 1px solid white !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+body[data-override] :is(input,textarea)::placeholder {
+    color: #555;
+}
+body[data-override] form:has(:is(
+    input:not(:placeholder-shown),
+    textarea:not(:placeholder-shown)
+)) :is(input,textarea):valid {
+    outline: 1px solid green !important;
+}
+
+
 body[data-override] a {
-    color: var(--hacker-green);
+    color:           var(--hacker-green);
     text-decoration: none;
 }
 
 body[data-override] a:hover {
-    color: var(--hacker-green);
+    color:           var(--hacker-green);
     text-decoration: underline;
 }
 
@@ -25,51 +43,63 @@ body[data-override] nav.navbar.navbar-expand-lg {
     align-items:    start;
     padding-bottom: 0;
 }
+
 body[data-override] header {
     background-color: black;
 }
 
-body[data-override] .navbar-brand { color: white }
+body[data-override] .navbar-brand {
+    color: white
+}
 
-body[data-override] #navbarNav, body[data-override] .navbar-nav { width: 100% }
+body[data-override] #navbarNav, body[data-override] .navbar-nav {
+    width: 100%
+}
 
 body[data-override] .nav-item {
-    padding: 0; margin: 0;
-    flex-grow: 1;
-    text-align: center;
-    font-size: 14px;
-    outline: none;
-    border-top: 1px solid white;
+    padding:       0;
+    margin:        0;
+    flex-grow:     1;
+    text-align:    center;
+    font-size:     14px;
+    outline:       none;
+    border-top:    1px solid white;
     border-bottom: 1px solid white;
-    flex-basis: 1px;
-    position: relative;
+    flex-basis:    1px;
+    position:      relative;
 }
-body[data-override] .nav-item.active>a.nav-link::after {
-    content: "";
-    display: block; width: calc(100% + 12px); height: 100%; top: 0; left: -6px;
-    position: absolute;
 
-    outline: 1px solid white;
-    outline-offset: -6px;
+body[data-override] .nav-item.active > a.nav-link::after {
+    content:         "";
+    display:         block;
+    width:           calc(100% + 12px);
+    height:          100%;
+    top:             0;
+    left:            -6px;
+    position:        absolute;
+
+    outline:         1px solid white;
+    outline-offset:  -6px;
     text-decoration: none !important;
 }
+
 body[data-override] header a {
     color: white !important;
 }
 
 body[data-override] .badge.badge-secondary {
-    background: transparent;
-    color: white;
-    outline: 1px solid white;
+    background:    transparent;
+    color:         white;
+    outline:       1px solid white;
     border-radius: 15px;
-    padding: 3px 5px;
-    margin-left: 7px;
+    padding:       3px 5px;
+    margin-left:   7px;
 }
 
 body[data-override] ul {
-    list-style-type: none;
+    list-style-type:      none;
     padding-inline-start: 0;
-    padding-inline-end: 0;
+    padding-inline-end:   0;
 }
 
 body[data-override] h2 {
@@ -79,118 +109,121 @@ body[data-override] h2 {
 
 body[data-override] h3 {
     margin-top: 0;
-    font-size: 18px;
+    font-size:  18px;
 }
 
 body[data-override] li {
-    outline: 1px solid white;
-    padding: 10px;
+    outline:       1px solid white;
+    padding:       10px;
     margin-bottom: 20px;
-    position: relative;
+    position:      relative;
 }
 
-body[data-override] li>a.link-to-project {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: block;
-    width: 10pt;
-    height: 10pt;
+body[data-override] li > a.link-to-project {
+    position:         absolute;
+    top:              10px;
+    right:            10px;
+    display:          block;
+    width:            10pt;
+    height:           10pt;
     background-image: url("link.png");
-    background-size: cover;
+    background-size:  cover;
 }
 
 body[data-override] #page-select {
-    display: flex;
-    flex-grow: 1;
-    position: relative;
-    border-top: 1px solid white;
+    display:       flex;
+    flex-grow:     1;
+    position:      relative;
+    border-top:    1px solid white;
     border-bottom: 1px solid white;
 }
 
 /* Customize the label (the#page-select>label) */
-body[data-override] #page-select>label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-    font-size: 11pt;
-    width: 6em;
-    flex-grow: 1;
-    text-align: center;
-    padding: 8px 10px;
+body[data-override] #page-select > label {
+    display:             flex;
+    justify-content:     center;
+    align-items:         center;
+    position:            relative;
+    cursor:              pointer;
+    font-size:           11pt;
+    width:               6em;
+    flex-grow:           1;
+    text-align:          center;
+    padding:             8px 10px;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    -moz-user-select:    none;
+    -ms-user-select:     none;
+    user-select:         none;
 }
 
-body[data-override] #page-select>label:hover {
+body[data-override] #page-select > label:hover {
     text-decoration: underline;
 }
 
 /* Hide the browser's default radio button */
-body[data-override] #page-select>input {
+body[data-override] #page-select > input {
     position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+    opacity:  0;
+    cursor:   pointer;
+    height:   0;
+    width:    0;
 }
 
 body[data-override] #page-select::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: calc(12px + 100% / var(--num-pages));
-    height: 100%;
-    outline: 1px solid white;
+    content:        "";
+    position:       absolute;
+    display:        block;
+    width:          calc(12px + 100% / var(--num-pages));
+    height:         100%;
+    outline:        1px solid white;
     outline-offset: -6px;
-    left: calc(-6px + 100% / var(--num-pages) * var(--page-number));
+    left:           calc(-6px + 100% / var(--num-pages) * var(--page-number));
 }
 
 body[data-override] h1 {
-    margin-top: 10px;
-    margin-bottom:10px;
+    margin-top:    10px;
+    margin-bottom: 10px;
 }
 
-body[data-override] h1>div {
+body[data-override] h1 > div {
     font-size: 11pt;
 }
 
-body[data-override] .header>*{
+body[data-override] .header > * {
     flex-grow: 0;
 }
 
 body[data-override] body {
     --page-number: 0;
-    --num-pages: 1;
-    margin: 0; padding: 0;
-    position: absolute; top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    transition: --page-number .5s;
+    --num-pages:   1;
+    margin:        0;
+    padding:       0;
+    position:      absolute;
+    top:           0;
+    left:          0;
+    width:         100vw;
+    height:        100vh;
+    transition:    --page-number .5s;
 }
 
 body[data-override] #sliding-pages {
-    display: flex;
+    display:        flex;
     flex-direction: column;
-    align-items: center;
-    transform: translateX(calc(-100vw * (var(--page-number) - var(--num-pages) / 2 + 0.5)));
+    align-items:    center;
+    transform:      translateX(calc(-100vw * (var(--page-number) - var(--num-pages) / 2 + 0.5)));
 }
 
 @property --page-number {
-    syntax: "<number>";
-    inherits: true;
+    syntax:        "<number>";
+    inherits:      true;
     initial-value: 0;
 }
 
 body[data-override] [data-replace] {
-    position: relative;
+    position:        relative;
     text-decoration: var(--dark-grey) underline 1px;
-    padding: 0 2px;
-    margin: 0 -2px;
+    padding:         0 2px;
+    margin:          0 -2px;
 }
 
 body[data-override] [data-replace]:hover {
@@ -198,23 +231,23 @@ body[data-override] [data-replace]:hover {
 }
 
 body[data-override] [data-replace]:hover::after {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    left: 0;
-    font-size: 11pt;
-    color: white;
-    content: attr(data-replace);
+    position:    absolute;
+    width:       100%;
+    text-align:  center;
+    left:        0;
+    font-size:   11pt;
+    color:       white;
+    content:     attr(data-replace);
     white-space: nowrap;
 }
 
 body[data-override] h3.game-project::after {
-    content: "Game";
-    margin-left: 10px;
-    font-size: 10pt;
-    outline: 1px solid white;
-    color: white;
-    border-radius: 9pt;
-    padding: 1pt 4pt;
+    content:        "Game";
+    margin-left:    10px;
+    font-size:      10pt;
+    outline:        1px solid white;
+    color:          white;
+    border-radius:  9pt;
+    padding:        1pt 4pt;
     vertical-align: 1pt;
 }
