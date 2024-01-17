@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<title>Home</title>
 
 		<!--External libraries-->
@@ -19,11 +20,13 @@
 	<body data-override>
 		<header>
 			<nav class="navbar navbar-expand-lg">
-				<div class="navbar-brand">
+				<div class="navbar-brand media">
 					<img src="../pfp.png" alt="No image :(" id="pfp">
-					<h1> NJonathanJiang
-						<span>(Nengyi J. Jiang)</span>
-					</h1>
+					<div class="media-body">
+						<h1> NJonathanJiang
+							<span>(Nengyi J. Jiang)</span>
+						</h1>
+					</div>
 				</div>
 				<div id="navbarNav">
 					<ul class="navbar-nav">
@@ -72,46 +75,6 @@
 			</section>
 		</div>
 
-		<script>
-            // let c = [...document.getElementById('page-select').querySelectorAll('input')];
-            // let pages = document.querySelectorAll('#sliding-pages>div');
-            // document.body.style.setProperty('--num-pages', c.length + '');
-            //
-            // function updatePages(pageNumber = 0) {
-            //     document.body.style.setProperty('--page-number', `${pageNumber}`);
-            //     document.querySelectorAll('a').forEach(i => i.setAttribute('tabindex', '-1'));
-            //     document.querySelectorAll(`#sliding-pages>div:nth-child(${pageNumber + 1}) a`).forEach(i => i.tabIndex = 0);
-            // }
-            //
-            // document.getElementById("page-select").onclick = () => {
-            //     let pageNumber = 0;
-            //     for (let i = 0; i < c.length; i++) {
-            //         if (c[i].checked) {
-            //             pageNumber = i;
-            //         }
-            //     }
-            //
-            //     updatePages(pageNumber);
-            // };
-            //
-            // updatePages(0);
-
-			function update() {
-				if(sessionStorage.getItem('use-override-bootstrap') === 'true') delete document.body.dataset['override'];
-				else document.body.dataset['override'] = '';
-			}
-            function toggleBootstrapOverrides() {
-				sessionStorage.setItem('use-override-bootstrap', (
-					'use-override-bootstrap' in sessionStorage && sessionStorage.getItem('use-override-bootstrap') === 'true'
-				) ? 'false' : 'true')
-				update();
-            }
-
-			update();
-            document.getElementById('pfp').oncontextmenu = _ => {
-                toggleBootstrapOverrides();
-                _.preventDefault()
-            }
-		</script>
+		<script src="script.js"></script>
 	</body>
 </html>

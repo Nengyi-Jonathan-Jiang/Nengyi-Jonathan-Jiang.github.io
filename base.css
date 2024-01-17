@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito');
+@import url("https://fonts.googleapis.com/css2?family=Nunito");
 
 @font-face {
-    font-family: 'JetBrains Mono';
-    src: url('JetBrainsMono-Regular.woff2');
+    font-family: "JetBrains Mono";
+    src:         url("JetBrainsMono-Regular.woff2");
 }
 
 * {
@@ -10,19 +10,19 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: justify;
-    line-height: 1.2;
+    display:               flex;
+    align-items:           center;
+    flex-direction:        column;
+    text-align:            justify;
+    line-height:           1.2;
 
     --bs-body-font-family: Nunito, sans-serif;
 }
 
 nav, section {
-    width: calc(100vw - 60px);
+    width:     calc(100vw - 60px);
     max-width: 700px;
-    position: relative;
+    position:  relative;
 }
 
 a {
@@ -32,8 +32,8 @@ a {
 img#pfp {
     border-radius: 50%;
 
-    height: 50px;
-    margin-right: 10px;
+    height:        50px;
+    margin-right:  10px;
 }
 
 h1 {
@@ -41,13 +41,13 @@ h1 {
 }
 
 h1, h2 {
-    font-size: 24px;
+    font-size:   24px;
     font-weight: bold
 }
 
 h3 {
-    font-size: 18px;
-    display: flex;
+    font-size:   18px;
+    display:     flex;
     align-items: center
 }
 
@@ -56,21 +56,21 @@ div, p, span {
 }
 
 header {
-    position: sticky;
-    top: 0;
+    position:         sticky;
+    top:              0;
     background-color: #eee;
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
+    z-index:          1;
+    width:            100%;
+    display:          flex;
+    justify-content:  center;
+    margin-bottom:    15px;
 }
 
 .navbar-brand {
-    display: flex;
-    align-items: center;
+    display:         flex;
+    align-items:     center;
     justify-content: left;
-    color: #333;
+    color:           #333;
 }
 
 #navbarNav {
@@ -78,7 +78,7 @@ header {
 }
 
 .navbar-nav {
-    flex-direction: row !important;
+    flex-direction:  row !important;
     justify-content: end !important
 }
 
@@ -86,12 +86,12 @@ header {
     padding: 7px !important
 }
 
-.navbar-brand > h1 > span {
+.navbar-brand h1 > span {
     display: block
 }
 
 .badge.badge-secondary {
-    background: #0088ff;
+    background:  #0088ff;
     margin-left: 4px;
     user-select: none;
 }
@@ -101,6 +101,20 @@ body::-webkit-scrollbar {
 }
 
 div#sliding-pages li {
-    margin-top: 20px;
+    margin-top:    20px;
     margin-bottom: 20px;
+}
+
+.form-group label:empty {
+    display: none;
+}
+.form-group {
+    padding-bottom: 8px;
+}
+
+form:has(:is(
+    input:not(:placeholder-shown),
+    textarea:not(:placeholder-shown)
+)) :is(input,textarea):invalid {
+    outline: 1px solid red !important;
 }
