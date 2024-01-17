@@ -7,6 +7,7 @@ body[data-override] {
     color:          white;
 
     --hacker-green: #00ff22;
+    --virus-red: #ff0033;
     --dark-grey:    #181818;
 }
 
@@ -24,9 +25,15 @@ body[data-override] form:has(:is(
     input:not(:placeholder-shown),
     textarea:not(:placeholder-shown)
 )) :is(input,textarea):valid {
-    outline: 1px solid green !important;
+    outline: 1px solid var(--hacker-green) !important;
 }
 
+body[data-override] form:has(:is(
+    input:not(:placeholder-shown),
+    textarea:not(:placeholder-shown)
+)) :is(input,textarea):invalid {
+    outline: 1px solid var(--virus-red) !important;
+}
 
 body[data-override] a {
     color:           var(--hacker-green);
@@ -81,6 +88,14 @@ body[data-override] .nav-item.active > a.nav-link::after {
     outline:         1px solid white;
     outline-offset:  -6px;
     text-decoration: none !important;
+}
+
+body[data-override] .alert.alert-warning {
+    background: transparent;
+    color: #f03;
+    border-color: #f03;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 body[data-override] header a {
