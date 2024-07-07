@@ -3,21 +3,30 @@
     src:         url("JetBrainsMono-Regular.woff2");
 }
 
+@font-face {
+    font-family: "Nunito";
+    src:         url("Nunito-VariableFont_wght.ttf");
+}
+
 * {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Nunito", monospace;
+}
+
+:root {
+    --highlight-color: #48f;
+    --dark-grey:       #181818;
+    --bg-color:        #ffffff;
+    --fg-color:        #000000;
 }
 
 body {
-    background:     black;
-    color:          white;
+    background:     var(--bg-color);
+    color:          var(--fg-color);
     display:        flex;
     align-items:    center;
     flex-direction: column;
     text-align:     justify;
     line-height:    1.2;
-
-    --hacker-green: #00ff22;
-    --dark-grey:    #181818;
 }
 
 section {
@@ -27,7 +36,7 @@ section {
 }
 
 a {
-    color:           var(--hacker-green);
+    color:           var(--highlight-color);
     text-decoration: none;
     font-weight:     normal;
 }
@@ -60,7 +69,7 @@ ul {
 }
 
 h2 {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--fg-color);
 }
 
 h3 {
@@ -69,9 +78,8 @@ h3 {
 }
 
 li {
-    outline:        1px solid white;
-    padding:        10px;
-    padding-bottom: 5px;
+    outline:        1px solid var(--fg-color);
+    padding:        10px 10px 5px;
     margin-bottom:  20px;
     position:       relative;
 }
@@ -81,9 +89,9 @@ li > a.link-to-project {
     top:              10px;
     right:            10px;
     display:          block;
-    width:            10pt;
-    height:           10pt;
-    background-image: url("link.png");
+    width:            14px;
+    height:           14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16'%3E%3Cpath d='M 5 1 L 4 1 A 3 3 0 0 0 1 4 L 1 12 A 3 3 0 0 0 4 15 L 12 15 A 3 3 0 0 0 15 12 L 15 11' stroke='%2348f' stroke-linecap='square' stroke-linejoin='round' stroke-width='2' fill='none'/%3E%3Cpath d=' M 10 1 15 1 L 15 6 M 8 8 L 15 1' stroke='%2348f' stroke-linecap='square' stroke-width='2' fill='none'/%3E%3C/svg%3E");
     background-size:  cover;
 }
 
@@ -95,8 +103,8 @@ img#pfp {
     display:       flex;
     flex-grow:     1;
     position:      relative;
-    border-top:    1px solid white;
-    border-bottom: 1px solid white;
+    border-top:    1px solid var(--fg-color);
+    border-bottom: 1px solid var(--fg-color);
 }
 
 /* Customize the label (the#page-select>label) */
@@ -136,7 +144,7 @@ img#pfp {
     display:        block;
     width:          calc(12px + 100% / var(--num-pages));
     height:         100%;
-    outline:        1px solid white;
+    outline:        1px solid var(--fg-color);
     outline-offset: -6px;
     left:           calc(-6px + 100% / var(--num-pages) * var(--page-number));
 }
@@ -144,9 +152,11 @@ img#pfp {
 h1 {
     margin-top:    10px;
     margin-bottom: 10px;
+    font-family: "JetBrains Mono", monospace;
 }
 
 h1 > div {
+    font-family: "JetBrains Mono", monospace;
     font-size: 11pt;
 }
 
@@ -205,35 +215,13 @@ body {
     initial-value: 0;
 }
 
-[data-replace] {
-    position:        relative;
-    text-decoration: var(--dark-grey) underline 1px;
-    padding:         0 2px;
-    margin:          0 -2px;
-}
-
-[data-replace]:hover {
-    color: transparent;
-}
-
-[data-replace]:hover::after {
-    position:    absolute;
-    width:       100%;
-    text-align:  center;
-    left:        0;
-    font-size:   11pt;
-    color:       white;
-    content:     attr(data-replace);
-    white-space: nowrap;
-}
-
-h3.game-project::after {
-    content:        "Game";
+.project-tag {
+    user-select: none;
     margin-left:    10px;
     font-size:      10pt;
-    outline:        1px solid white;
-    color:          white;
+    background:     var(--highlight-color);
+    color:          var(--bg-color);
     border-radius:  9pt;
-    padding:        1pt 4pt;
-    vertical-align: 1pt;
+    padding:        1pt 5pt;
+    vertical-align: 1.5pt;
 }

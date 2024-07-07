@@ -6,7 +6,7 @@ body[data-override] {
     background:     black;
     color:          white;
 
-    --hacker-green: #00ff22;
+    --highlight-color: #00ff22;
     --virus-red: #ff0033;
     --dark-grey:    #181818;
 }
@@ -25,7 +25,7 @@ body[data-override] form:has(:is(
     input:not(:placeholder-shown),
     textarea:not(:placeholder-shown)
 )) :is(input,textarea):valid {
-    outline: 1px solid var(--hacker-green) !important;
+    outline: 1px solid var(--highlight-color) !important;
 }
 
 body[data-override] form:has(:is(
@@ -36,12 +36,12 @@ body[data-override] form:has(:is(
 }
 
 body[data-override] a {
-    color:           var(--hacker-green);
+    color:           var(--highlight-color);
     text-decoration: none;
 }
 
 body[data-override] a:hover {
-    color:           var(--hacker-green);
+    color:           var(--highlight-color);
     text-decoration: underline;
 }
 
