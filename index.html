@@ -4,13 +4,13 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<title>Home</title>
+		<title>MeditativeOnion</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
 	</head>
 	<body data-override>
 		<section class="header">
 			<div id="left">
-				<img src="pfp.png" alt="No image :(" id="pfp">
+				<img src="res/images/pfp.png" alt="No image :(" id="pfp">
 				<h1> MeditativeOnion
 					<div>(NJonathanJiang)</div>
 				</h1>
@@ -79,14 +79,19 @@
 								<span class="project-tag">Mobile Friendly</span>
 							</h3>
 							<p>
-								A retro-style platformer/puzzle game. Get the capybara to the
-								candy! I made this with the help of
+								A retro-style platformer/puzzle game that will make you think, hard. Get the capybara to
+								the candy with the help of a ghostly helper! I made this with the help of
 								<a tabindex="-1" href="https://github.com/EvuhLi " target="_blank">Eva Li</a>,
 								<a tabindex="-1" href="https://github.com/RouRai " target="_blank">Rounak Rai</a>, and
 								<a tabindex="-1" href="https://github.com/Santiago11234 " target="_blank">Santiago
 									Espinoza</a>
 								for a local game jam.
 							</p>
+							<img class="project-img" src="res/images/go-capy-go.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								The final and hardest level in the game, "Remote control".
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/Go-Capy-Go/"
 							   class="link-to-project"
 							   target="_blank"></a>
@@ -103,6 +108,12 @@
 								that it has tripled my efficiency at transcribing music, as it helps me identify softer
 								notes in complex chords that my ear might have missed. Built with Next.js
 							</p>
+							<img class="project-img" src="res/images/music-analyzer.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								The UI of the application. From the peaks, we can guess that there is probably just one
+								note being played, B2.
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/MusicAnalyzer/"
 							   class="link-to-project"
 							   target="_blank"></a>
@@ -115,14 +126,50 @@
 								<span class="project-tag">Simulation</span>
 							</h3>
 							<p>
-								A really cool simulation that I worked on. You can control the
-								reaction parameters (reaction rate, diffusion radius, diffusion
-								rates, feed rate, remove rate, etc.) and the speed of the
-								simulation (steps per frame). For some combinations of
-								parameters, complex structures reminiscent of cellular division
-								can occur. I used compute shaders in WebGL to calculate the
-								steps of the simulation.
+								A really cool simulation that I worked on. The idea is to simulate a pool of two kinds
+								chemicals, A and B, which react according to the chemical equation 2B + A &rarr; 3B and
+								gradually diffuse at different rates. In addition, chemical A is constantly added and
+								chemical B is constantly removed. The simulation does not track individual molecules;
+								instead, it tracks the <em>concentration</em> of A and B at each point and updates them
+								according to the differential equations governing the reaction and the diffusion. With
+								an appropriate choice of parameters, the simulation can display surprisingly complex
+								behavior that looks almost biological.
 							</p>
+							<img class="project-img" src="res/images/rds-0.png" alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								The simulation run with diffusion radius = 1, relative diffusion rate = 0.5, feed rate =
+								0.02, and remove rate = 0.06. The simulation resembles cell division. Note that black
+								means full concentration of A, deep blue represents chemical B, and a greenish/cyan tint
+								indicates a lack of chemical A
+							</span>
+							<img class="project-img" src="res/images/rds-1.png" alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								The simulation with the same parameters, about a minute later. I turned on "Fancier
+								Display" for this screenshot, which highlights the areas where the concentrations of
+								reactants are changing faster.
+							</span>
+							<img class="project-img" src="res/images/rds-3.png" alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								The simulation run with diffusion radius = 1, relative diffusion rate = 0.5, feed rate
+								= 0.02, and remove rate = 0.05, after a very long time. The simulation is chaotic and
+								very different from the last one, and we can see the beginning of an explanation for the
+								cell-division-like behavior of the last simulation from the way that the ends of a
+								"reaction front" twist and spiral. This is even more evident when "Fancier Display" is
+								turned on.
+							</span>
+							<img class="project-img" src="res/images/rds-2.png" alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								The simulation run with diffusion radius = 1, relative diffusion rate = 0.688, feed rate
+								= 0.036, and remove rate = 0.057, after a very long time. This time, the simulation
+								looks uncannily disturbing.
+							</span>
+							<img class="project-img" src="res/images/rds-4.png" alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								A spirally simulation run, with relative diffusion rate = 0.7, feed rate = 0.02, remove
+								rate = 0.05. I couldn't get this to work directly from the starting condition and had to
+								use other parameters to let the system become more interesting and chaotic before
+								switching to these parameters.
+							</span>
 							<a tabindex="-1"
 							   href="https://nengyi-jonathan-jiang.github.io/reaction-diffusion-simulator/"
 							   class="link-to-project"
@@ -137,9 +184,20 @@
 							</h3>
 							<p>
 								A retro-style game based on <a href="https://coolmathgames.com/pirate-jack-gold-beard">
-								a game from coolmathgames.com</a>. Match three mushrooms to make a bigger mushroom. A
-								and D to move the mushrooms, W to rotate, S to drop.
+								a game from coolmathgames.com</a>, with original background music by me. A and D to move
+								the mushrooms, W to rotate, S to drop (on mobile, WASD are replaced with swiping up left
+								down right). Merge 3 or more mushrooms of the same kind to get a better mushroom and
+								some points. I accidentally got myself and quite a few of my friends (I think there were
+								6) addicted to this game after we play-tested it.
 							</p>
+							<img class="project-img" src="res/images/mushroom-mania.png" style="--w: .5"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								A typical game of Mushroom Mania. 3 single mushrooms merge to a double mushroom, 3
+								double mushrooms merge to a large mushroom, and 3 large mushrooms merge to a mushroom of
+								the next color. Colors go red, gold, green, blue, and finally black (I have never
+								managed to get a black mushroom before).
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/MushroomMania/"
 							   class="link-to-project"
 							   target="_blank"></a>
@@ -204,32 +262,6 @@
 							   target="_blank"></a>
 						</li>
 						<li>
-							<h3><a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/mather/ "
-								   target="_blank">Display
-								Math</a>
-								<span class="project-tag">Tool</span>
-							</h3>
-							<p>
-								Math display thing I made, a bit similar to LaTeX.
-							</p>
-							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/mather/"
-							   class="link-to-project"
-							   target="_blank"></a>
-						</li>
-						<li>
-							<h3>
-								<a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/svg-editor"
-								   target="_blank">SVG editor</a>
-								<span class="project-tag">Tool</span>
-							</h3>
-							<p>
-								Edit the raw XML of an SVG. Has rudimentary syntax highlighting and real-time preview.
-								You can save SVGs to your computer as an svg file or png file.
-							</p>
-							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/svg-editor/"
-							   class="link-to-project" target="_blank"></a>
-						</li>
-						<li>
 							<h3>
 								<a tabindex="-1"
 								   href="https://github.com/Nengyi-Jonathan-Jiang/Untitled-Game/ "
@@ -271,6 +303,66 @@
 							</p>
 							<a href="https://nengyi-jonathan-jiang.github.io/Space-Junk/" class="link-to-project"
 							   target="_blank"></a>
+						</li>
+					</ul>
+					<h2>My favorite unfinished projects</h2>
+					<ul>
+						<li>
+							<h3><a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/mather/ "
+								   target="_blank">Display
+								Math</a>
+								<span class="project-tag">Tool</span>
+							</h3>
+							<p>
+								Math display thing I made, a bit similar to LaTeX.
+							</p>
+							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/mather/"
+							   class="link-to-project"
+							   target="_blank"></a>
+						</li>
+						<li>
+							<h3>
+								<a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/svg-editor"
+								   target="_blank">SVG editor</a>
+								<span class="project-tag">Tool</span>
+							</h3>
+							<p>
+								Edit the raw XML of an SVG. Has rudimentary syntax highlighting and real-time preview.
+								You can save SVGs to your computer as an svg file or png file.
+							</p>
+							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/svg-editor/"
+							   class="link-to-project" target="_blank"></a>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<div>
+				<section>
+					<h2>Short compositions</h2>
+					<ul>
+						<li>
+							<h3>Calm</h3>
+							<audio controls>
+								<source src="res/audio/Calm.mp3">
+							</audio>
+						</li>
+						<li>
+							<h3>Gnome dance</h3>
+							<audio controls loop>
+								<source src="res/audio/gnome_dance.mp3">
+							</audio>
+						</li>
+						<li>
+							<h3>The enchanted forest</h3>
+							<audio controls>
+								<source src="res/audio/strange_little_tune.mp3">
+							</audio>
+						</li>
+						<li>
+							<h3>Abandoned Circus</h3>
+							<audio controls>
+								<source src="res/audio/funny_little_tune.mp3">
+							</audio>
 						</li>
 					</ul>
 				</section>

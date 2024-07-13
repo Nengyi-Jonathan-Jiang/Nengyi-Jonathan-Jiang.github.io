@@ -1,11 +1,11 @@
 @font-face {
     font-family: "JetBrains Mono";
-    src:         url("JetBrainsMono-Regular.woff2");
+    src:         url("res/font/JetBrainsMono-Regular.woff2");
 }
 
 @font-face {
     font-family: "Nunito";
-    src:         url("Nunito-VariableFont_wght.ttf");
+    src:         url("res/font/Nunito-VariableFont_wght.ttf");
 }
 
 * {
@@ -224,4 +224,19 @@ body {
     border-radius:  9pt;
     padding:        1pt 5pt;
     vertical-align: 1.5pt;
+}
+
+.project-img-caption {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+}
+
+.project-img {
+    --w: 1;
+    width: calc(var(--w) * 100%);
+    height: auto;
+    position: relative;
+    left: calc((1 - var(--w)) * 50%);
 }
