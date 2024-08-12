@@ -47,14 +47,14 @@
 					<p>
 						I have been programing in Python for 8 years, Java for 6 years, HTML/CSS/JS for 5 years, and C++
 						for 5 years. In addition, I have a little bit of experience with C#, MATLAB, and a few other
-						languages. I am currently learning Rust.
+						languages. I am currently learning Rust. Check out my coding projects!
 					</p>
 				</section>
 				<section>
 					<h2> Musical Experience </h2>
 					<p>
 						I have been playing the piano for 9 years and the clarinet for 5 years. I have some knowledge of
-						music theory.
+						music theory. Check out my music!
 					</p>
 				</section>
 				<section>
@@ -69,6 +69,11 @@
 			<div>
 				<section>
 					<h2>My favorite projects</h2>
+					<p>
+						In no particular order. Feel free to try these out. Clicking on the title takes you to the
+						GitHub repository; clicking on the little icon at the top right takes you to the webpage (if
+						there is one)
+					</p>
 					<ul>
 						<li>
 							<h3><a tabindex="-1"
@@ -126,14 +131,15 @@
 								<span class="project-tag">Simulation</span>
 							</h3>
 							<p>
-								A really cool simulation that I worked on. The idea is to simulate a pool of two kinds
-								chemicals, A and B, which react according to the chemical equation 2B + A &rarr; 3B and
-								gradually diffuse at different rates. In addition, chemical A is constantly added and
-								chemical B is constantly removed. The simulation does not track individual molecules;
-								instead, it tracks the <em>concentration</em> of A and B at each point and updates them
-								according to the differential equations governing the reaction and the diffusion. With
-								an appropriate choice of parameters, the simulation can display surprisingly complex
-								behavior that looks almost biological.
+								A really cool simulation that I wanted to implement. The idea is to simulate a pool of
+								two kinds chemicals, A and B, which react according to the chemical equation 2B + A
+								&rarr; 3B and gradually diffuse at different rates. In addition, chemical A is
+								constantly added and chemical B is constantly removed. The simulation does not track
+								individual molecules; instead, it tracks the <em>concentration</em> of A and B at each
+								point and updates them according to the differential equations governing the reaction
+								and the diffusion. With an appropriate choice of parameters, the simulation can display
+								surprisingly complex behavior that looks almost biological. I had to recall my AP
+								Chemistry knowledge to get the differential equations right for updating the simulation.
 							</p>
 							<img class="project-img" src="res/images/rds-0.png" alt="Sorry, the image didn't load :(">
 							<span class="project-img-caption">
@@ -209,22 +215,36 @@
 								<span class="project-tag">Game</span><span class="project-tag">Mobile Friendly</span>
 							</h3>
 							<p>
-								A chinese sliding puzzle. Get the big piece labeled 曹 to the
-								bottom. These puzzles are harder than they look &mdash; many require
-								50+ moves, with the last one requiring more than 130!
+								A chinese sliding puzzle. Get the big piece labeled 曹 to the exit at the bottom.
+								These puzzles are harder than they look &mdash; many require 50+ moves, with the last
+								one
+								requiring more than 130!
 							</p>
+							<img class="project-img" src="res/images/klotski-1.png" style="--w: .5"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								The last (and hardest) puzzle in my collection, requiring around 140 moves to solve.
+							</span>
+							<img class="project-img" src="res/images/klotski-2.png" style="--w: .5"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								One step away from success!
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/Hua-Rong-Dao-Klotski/"
 							   class="link-to-project" target="_blank"></a>
 						</li>
 						<li>
-							<h3><a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/3body " target="_blank">Three
-								body simulator</a>
+							<h3>
+								<a tabindex="-1" href="https://github.com/Nengyi-Jonathan-Jiang/3body " target="_blank">
+									Three body simulator
+								</a>
 								<span class="project-tag">Simulation</span>
 							</h3>
 							<p>
 								Another really cool simulation that I worked on. Simulates
 								three massive stars in 3d space interacting through gravity.
 							</p>
+							<img class="project-img" src="res/images/3body.png" alt="Sorry, the image didn't load :(">
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/3body/"
 							   class="link-to-project"
 							   target="_blank"></a>
@@ -239,6 +259,17 @@
 								A classic board game. Get five stones in a row! The AI I made for this (using just
 								pattern recognition, no neural networks or even tree search) is hard, but beatable.
 							</p>
+							<img class="project-img" src="res/images/5-in-a-row-lose.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								I lost! There is no way to prevent white (computer) from making 5 in a row
+							</span>
+							<img class="project-img" src="res/images/5-in-a-row-win.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								5 in a row can also be achieved diagonally. Here, black (player) played a nasty trap to
+								force a win.
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/Five-in-a-row-web/"
 							   class="link-to-project" target="_blank"></a>
 						</li>
@@ -255,8 +286,27 @@
 								An interesting puzzle. You start with a random grid of lights that may be on or off, and
 								can toggle all the lights in any 3x3 square centered on a light in the grid. The goal is
 								to turn all the lights on. I wrote a solver for the general case using a bit of linear
-								algebra.
+								algebra (Gaussian elimination mod 2).
 							</p>
+							<img class="project-img" src="res/images/light-puzzle-4x4.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								Even the 4x4 case is surprisingly non-trivial. Try it out!
+							</span>
+							<img class="project-img" src="res/images/light-puzzle-12x12.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								Thought the solver can go higher, I put the maximum size at 12x12. Good luck solving
+								this one by hand!
+							</span>
+							<img class="project-img" src="res/images/light-puzzle-3x6.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								I also have rectangular puzzle sizes, such as 3x6. Interestingly, not every board size
+								is always solvable &mdash; for example, some initial configurations for 7x7 and 11x11 boards
+								do not have solutions. I don't know why this is the case, nor do I know the general rule
+								to determine if a board size is always solvable.
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/Light-Puzzle/"
 							   class="link-to-project"
 							   target="_blank"></a>
@@ -273,6 +323,12 @@
 								played on a touchscreen device, although mouse is okay. Touchpad
 								highly discouraged.
 							</p>
+							<img class="project-img" src="res/images/circle-good-square-bad.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								Those pesky triangles ate up all my energy. When your energy reaches zero, the game is
+								over. Eating circles gives you energy, and getting hit makes you lose energy.
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/Untitled-Game/"
 							   class="link-to-project" target="_blank"></a>
 						</li>
@@ -287,6 +343,12 @@
 								generated, so some may be easier than others. However, all are
 								guaranteed to be solvable.
 							</p>
+							<img class="project-img" src="res/images/maze-game.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								Since I have the 'X' key, I will be able to get through the 'X' obstacle here, which
+								will consume the key.
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/Maze-CS-Unity/"
 							   class="link-to-project" target="_blank"></a>
 						</li>
@@ -314,8 +376,13 @@
 								<span class="project-tag">Tool</span>
 							</h3>
 							<p>
-								Math display thing I made, a bit similar to LaTeX.
+								Math editor thing I made, a bit similar to LaTeX.
 							</p>
+							<img class="project-img" src="res/images/math-editor-broken.png"
+								 alt="Sorry, the image didn't load :(">
+							<span class="project-img-caption">
+								Yea... that ain't right...
+							</span>
 							<a tabindex="-1" href="https://nengyi-jonathan-jiang.github.io/mather/"
 							   class="link-to-project"
 							   target="_blank"></a>
@@ -339,27 +406,95 @@
 			<div>
 				<section>
 					<h2>Short compositions</h2>
+					<p>
+						For you to enjoy (or not. Some of these aren't so good). All of these are audio generated by
+						<a href="https://musescore.org/en" target="_blank">Musescore</a>.
+					</p>
 					<ul>
 						<li>
 							<h3>Calm</h3>
+							<p>
+								Improvised at night. I had just finished a difficult project and this is what tired old
+								me came up with.
+							</p>
 							<audio controls>
 								<source src="res/audio/Calm.mp3">
 							</audio>
 						</li>
 						<li>
+							<h3>Raindrops</h3>
+							<p>
+								Improvised during a thunderstorm.
+							</p>
+							<audio controls>
+								<source src="res/audio/Raindrops.mp3">
+							</audio>
+						</li>
+						<li>
+							<h3>Journey</h3>
+							<p>
+								I wanted to see what would happen if I stacked a bunch of fifths on top of each other.
+								This is the result.
+							</p>
+							<audio controls>
+								<source src="res/audio/Raindrops.mp3">
+							</audio>
+						</li>
+						<li>
 							<h3>Gnome dance</h3>
+							<p>
+								Looping background music for a scene in an RPG I made for a game jam. Unfortunately, the
+								game never got finished.
+							</p>
 							<audio controls loop>
 								<source src="res/audio/gnome_dance.mp3">
 							</audio>
 						</li>
 						<li>
+							<h3>Fugue in G minor</h3>
+							<p>
+								A fugue for 3 clarinets, in G minor. This is my first attempt at writing a contrapuntal
+								piece; I think I did reasonably well.
+							</p>
+							<audio controls>
+								<source src="res/audio/fugue.mp3">
+							</audio>
+						</li>
+						<li>
 							<h3>The enchanted forest</h3>
+							<p>
+								An otherworldly-sounding piece. I really like the middle section in the Phrygian mode.
+							</p>
 							<audio controls>
 								<source src="res/audio/strange_little_tune.mp3">
 							</audio>
 						</li>
 						<li>
+							<h3>Epilogue</h3>
+							<p>
+								I imagine this might be a sad ending to a movie? This was an exercise in voice-leading I
+								did for an AP Music Theory assignment.
+							</p>
+							<audio controls>
+								<source src="res/audio/Raindrops.mp3">
+							</audio>
+						</li>
+						<li>
+							<h3>Optimistic Theme</h3>
+							<p>
+								I sat down one day and wanted to write something happy to make me not sad. This is the
+								result. I think it worked.
+							</p>
+							<audio controls>
+								<source src="res/audio/optimistic_theme.mp3">
+							</audio>
+						</li>
+						<li>
 							<h3>Abandoned Circus</h3>
+							<p>
+								A short 8-bar composition I came up with. For some reason, it gave me dark, circus
+								vibes.
+							</p>
 							<audio controls>
 								<source src="res/audio/funny_little_tune.mp3">
 							</audio>
