@@ -78,10 +78,10 @@ h3 {
 }
 
 li {
-    outline:        1px solid var(--fg-color);
-    padding:        10px 10px 5px;
-    margin-bottom:  20px;
-    position:       relative;
+    outline:       1px solid var(--fg-color);
+    padding:       10px 10px 5px;
+    margin-bottom: 20px;
+    position:      relative;
 }
 
 li > a.link-to-project {
@@ -152,12 +152,12 @@ img#pfp {
 h1 {
     margin-top:    10px;
     margin-bottom: 10px;
-    font-family: "JetBrains Mono", monospace;
+    font-family:   "JetBrains Mono", monospace;
 }
 
 h1 > div {
     font-family: "JetBrains Mono", monospace;
-    font-size: 11pt;
+    font-size:   11pt;
 }
 
 #left {
@@ -187,6 +187,7 @@ body {
     height:        100vh;
     overflow:      hidden;
     transition:    --page-number .5s;
+    box-sizing:    border-box;
 }
 
 #sliding-pages {
@@ -216,7 +217,7 @@ body {
 }
 
 .project-tag {
-    user-select: none;
+    user-select:    none;
     margin-left:    10px;
     font-size:      10pt;
     background:     var(--highlight-color);
@@ -227,16 +228,16 @@ body {
 }
 
 .project-img-caption {
-    display: inline-block;
-    width: 100%;
+    display:    inline-block;
+    width:      100%;
     text-align: center;
-    margin: 5px;
+    margin:     5px;
 }
 
 .project-img {
-    --w: 1;
-    width: calc(var(--w) * 100%);
-    height: auto;
+    --w:      1;
+    width:    calc(var(--w) * 100%);
+    height:   auto;
     position: relative;
-    left: calc((1 - var(--w)) * 50%);
+    left:     calc((1 - var(--w)) * 50%);
 }
