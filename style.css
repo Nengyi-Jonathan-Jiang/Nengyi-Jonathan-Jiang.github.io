@@ -206,6 +206,14 @@ body {
     overflow-y:     scroll;
 }
 
+#sliding-pages > div::after {
+    display:    block;
+    content:    "";
+    width:      100%;
+    height:     1px;
+    margin-top: 20px;
+}
+
 #sliding-pages > div::-webkit-scrollbar {
     display: none;
 }
