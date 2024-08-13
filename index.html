@@ -7,7 +7,7 @@
 		<title>NJonathanJiang</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
 	</head>
-	<body data-override>
+	<body>
 		<section class="header">
 			<div id="left">
 				<img src="res/images/pfp.png" alt="No image :(" id="pfp" onclick="alert('What a beautiful onion!')">
@@ -47,14 +47,15 @@
 					<p>
 						I have been programing in Python for 8 years, Java for 6 years, HTML/CSS/JS for 5 years, and C++
 						for 5 years. In addition, I have a little bit of experience with C#, MATLAB, and a few other
-						languages. I am currently learning Rust. Check out my coding projects!
+						languages. I am currently learning Rust. <a href="./#page2">Check out some of
+						my projects</a>!
 					</p>
 				</section>
 				<section>
 					<h2> Musical Experience </h2>
 					<p>
-						I have been playing the piano for 9 years and the clarinet for 5 years. I have some knowledge of
-						music theory. Check out my music!
+						I have been playing the piano for 9 years and the clarinet for 5 years. I am also an amateur
+						composer. <a href="./#page2">Check out some of my compositions</a>!
 					</p>
 				</section>
 				<section>
@@ -241,7 +242,8 @@
 							<p>
 								Wordle. Supports 4-12 letter words, with easy and hard difficulties.
 							</p>
-							<img class="project-img" src="res/images/wordle-7-letter.png" alt="Sorry, the image didn't load :(">
+							<img class="project-img" src="res/images/wordle-7-letter.png"
+								 alt="Sorry, the image didn't load :(">
 							<span class="project-img-caption">
 								A typical game of 7-letter wordle. I find that "CRUSHED TOENAIL" is a very effective
 								starting pair.
@@ -525,9 +527,15 @@
 			document.body.style.setProperty('--num-pages', c.length + '');
 
 			function updatePages(pageNumber = 0) {
+				if(pageNumber === +document.body.style.getPropertyValue('--page-number')) {
+					return;
+				}
+
 				document.body.style.setProperty('--page-number', `${pageNumber}`);
 				document.querySelectorAll('a').forEach(i => i.setAttribute('tabindex', '-1'));
 				document.querySelectorAll(`#sliding-pages>div:nth-child(${pageNumber + 1}) a`).forEach(i => i.tabIndex = 0);
+
+				window.location.hash = `page${pageNumber}`;
 			}
 
 			document.getElementById("page-select").onclick = () => {
@@ -541,7 +549,11 @@
 				updatePages(pageNumber);
 			};
 
-			updatePages(0);
+			window.onhashchange = (f => ((f() || true) && f))(() => {
+				const m = window.location.hash.match(/^#page(\d+)$/)
+
+				if (m) updatePages(+m[1]);
+			})
 		</script>
 	</body>
 </html>
