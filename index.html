@@ -131,7 +131,8 @@
 							   target="_blank"></a>
 						</li>
 						<li>
-							<h3><a id="RDSim" href="https://nengyi-jonathan-jiang.github.io/reaction-diffusion-simulator"
+							<h3><a id="RDSim"
+								   href="https://nengyi-jonathan-jiang.github.io/reaction-diffusion-simulator"
 								   target="_blank">Reaction-Diffusion
 								simulator</a>
 								<span class="project-tag">Simulation</span>
@@ -552,8 +553,6 @@
 				}
 
 				document.body.style.setProperty('--page-number', `${pageNumber}`);
-
-				window.location.hash = `page${pageNumber}`;
 			}
 
 			document.getElementById("page-select").onclick = () => {
@@ -568,10 +567,17 @@
 			};
 
 			window.onhashchange = (f => ((f() || true) && f))(() => {
-				const m = window.location.hash.match(/^#page(\d+)$/)
+				const m = window.location.hash.match(/^#page(\d+)(?:&(.*))?/)
 
-				if (m) updatePages(+m[1]);
-				else updatePages(1);
+				if (m) {
+					updatePages(+m[1]);
+					if (m[2]) {
+						document.getElementById(m[2]).scrollIntoView({
+							behavior: "instant",
+							block: "start"
+						})
+					}
+				}
 			})
 		</script>
 	</body>
