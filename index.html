@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="style.css" type="text/css">
 	</head>
 	<body>
-		<section class="header">
+		<section id="header">
 			<div id="left">
 				<img src="res/images/pfp.png" alt="No image :(" id="pfp" onclick="alert('What a beautiful onion!')">
 				<h1> NJonathanJiang
@@ -17,22 +17,19 @@
 				</h1>
 			</div>
 			<div id="page-select">
-				<input type="radio" checked="checked" name="page-select-buttons" id="home">
-				<label for="home">
+				<span>
 					Home
-				</label>
-				<input type="radio" name="page-select-buttons" id="projects-btn">
-				<label for="projects-btn">
+				</span>
+				<span>
 					Coding Projects
-				</label>
-				<input type="radio" name="page-select-buttons" id="music">
-				<label for="music">
+				</span>
+				<span>
 					Music
-				</label>
+				</span>
 			</div>
 		</section>
 		<div id="sliding-pages">
-			<div>
+			<div id="home">
 				<section>
 					<h2> Who am I? </h2>
 					<p>
@@ -48,7 +45,7 @@
 					<p>
 						I have been programing in Python for 8 years, Java for 6 years, HTML/CSS/JS for 5 years, and C++
 						for 5 years. In addition, I have a little bit of experience with C#, MATLAB, and a few other
-						languages. I am currently learning Rust. <a href="./#page1">Check out some of
+						languages. I am currently learning Rust. <a href="./#scrollto=projects">Check out some of
 						my projects</a>!
 					</p>
 				</section>
@@ -56,7 +53,7 @@
 					<h2> Musical Experience </h2>
 					<p>
 						I have been playing the piano for 9 years and the clarinet for 5 years. I am also an amateur
-						composer. <a href="./#page2">Check out some of my compositions</a>!
+						composer. <a href="./#scrollto=music">Check out some of my compositions</a>!
 					</p>
 				</section>
 				<section>
@@ -68,7 +65,8 @@
 					</p>
 				</section>
 			</div>
-			<div>
+			<span class="divider"></span>
+			<div id="projects">
 				<section>
 					<h2>My favorite projects</h2>
 					<p>
@@ -76,8 +74,8 @@
 						project. Projects without the &#8220;Supports Mobile&#8221; tag may not work on mobile devices.
 					</p>
 					<ul>
-						<li>
-							<h3><a id="GoCapyGo" href="https://nengyi-jonathan-jiang.github.io/Go-Capy-Go"
+						<li id="GoCapyGo">
+							<h3><a href="https://nengyi-jonathan-jiang.github.io/Go-Capy-Go"
 								   target="_blank">Go
 								Capy Go!</a>
 								<span class="project-tag">Game</span>
@@ -130,8 +128,8 @@
 							   class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
-							<h3><a id="RDSim"
+						<li id="RDSim">
+							<h3><a
 								   href="https://nengyi-jonathan-jiang.github.io/reaction-diffusion-simulator"
 								   target="_blank">Reaction-Diffusion
 								simulator</a>
@@ -190,8 +188,8 @@
 							   class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
-							<h3><a id="MushroomMania" href="https://nengyi-jonathan-jiang.github.io/MushroomMania"
+						<li id="MushroomMania">
+							<h3><a href="https://nengyi-jonathan-jiang.github.io/MushroomMania"
 								   target="_blank">Mushroom Mania</a>
 								<span class="project-tag">Game</span>
 								<span class="project-tag">Supports Mobile</span>
@@ -217,9 +215,9 @@
 							<a href="https://nengyi-jonathan-jiang.github.io/MushroomMania" class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
+						<li id="Klotski">
 							<h3>
-								<a id="Klotski" href="https://nengyi-jonathan-jiang.github.io/Hua-Rong-Dao-Klotski "
+								<a href="https://nengyi-jonathan-jiang.github.io/Hua-Rong-Dao-Klotski "
 								   target="_blank"> Klotski (华容道) </a>
 								<span class="project-tag">Game</span><span class="project-tag">Supports Mobile</span>
 							</h3>
@@ -244,9 +242,9 @@
 							<a href="https://nengyi-jonathan-jiang.github.io/Hua-Rong-Dao-Klotski"
 							   class="link-to-project" target="_blank"></a>
 						</li>
-						<li>
+						<li id="Wordle">
 							<h3>
-								<a id="Wordle" href="https://nengyi-jonathan-jiang.github.io/Wordle/"
+								<a href="https://nengyi-jonathan-jiang.github.io/Wordle/"
 								   target="_blank"> Wordle </a>
 								<span class="project-tag">Game</span><span class="project-tag">Supports Mobile</span>
 							</h3>
@@ -264,9 +262,9 @@
 							<a href="https://nengyi-jonathan-jiang.github.io/Wordle" class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
+						<li id="3Body">
 							<h3>
-								<a id="3Body" href="https://nengyi-jonathan-jiang.github.io/3body " target="_blank">
+								<a href="https://nengyi-jonathan-jiang.github.io/3body " target="_blank">
 									Three body simulator
 								</a>
 								<span class="project-tag">Simulation</span>
@@ -281,8 +279,8 @@
 							<a href="https://nengyi-jonathan-jiang.github.io/3body" class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
-							<h3><a id="Gomoku" href="https://nengyi-jonathan-jiang.github.io/Five-in-a-row-web "
+						<li id="Gomoku">
+							<h3><a href="https://nengyi-jonathan-jiang.github.io/Five-in-a-row-web "
 								   target="_blank">Five in a row (Gomoku, 五子棋)</a>
 								<span class="project-tag">Game</span><span class="project-tag">Supports Mobile</span>
 							</h3>
@@ -306,8 +304,8 @@
 							<a href="https://nengyi-jonathan-jiang.github.io/Five-in-a-row-web" class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
-							<h3><a id="LightPuzzle" href="https://nengyi-jonathan-jiang.github.io/Light-Puzzle"
+						<li id="LightPuzzle">
+							<h3><a href="https://nengyi-jonathan-jiang.github.io/Light-Puzzle"
 								   target="_blank">Light Puzzle</a>
 								<span class="project-tag">Game</span>
 								<span class="project-tag">Simulation</span>
@@ -344,9 +342,9 @@
 							<a href="https://nengyi-jonathan-jiang.github.io/Light-Puzzle" class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
+						<li id="CircleSquare">
 							<h3>
-								<a id="CircleSquare" href="https://nengyi-jonathan-jiang.github.io/Untitled-Game/ "
+								<a href="https://nengyi-jonathan-jiang.github.io/Untitled-Game/ "
 								   target="_blank">Circle good, Square bad</a>
 								<span class="project-tag">Game</span><span class="project-tag">Supports Mobile</span>
 							</h3>
@@ -366,8 +364,8 @@
 							<a href="https://nengyi-jonathan-jiang.github.io/Untitled-Game" class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
-							<h3><a id="Maze" href="https://nengyi-jonathan-jiang.github.io/Maze-CS-Unity "
+						<li id="Maze">
+							<h3><a href="https://nengyi-jonathan-jiang.github.io/Maze-CS-Unity "
 								   target="_blank">Maze Game</a>
 								<span class="project-tag">Game</span>
 							</h3>
@@ -387,8 +385,8 @@
 							<a href="https://nengyi-jonathan-jiang.github.io/Maze-CS-Unity" class="link-to-project"
 							   target="_blank"></a>
 						</li>
-						<li>
-							<h3><a id="SpaceJunk" href="https://nengyi-jonathan-jiang.github.io/Space-Junk"
+						<li id="SpaceJunk">
+							<h3><a href="https://nengyi-jonathan-jiang.github.io/Space-Junk"
 								   target="_blank">Space Junk</a>
 								<span class="project-tag">Game</span>
 							</h3>
@@ -441,7 +439,8 @@
 					</ul>
 				</section>
 			</div>
-			<div>
+			<span class="divider"></span>
+			<div id="music">
 				<section>
 					<h2>Short compositions</h2>
 					<p>
@@ -502,6 +501,7 @@
 							<h3>The enchanted forest</h3>
 							<p>
 								An otherworldly-sounding piece. I really like the middle section in the Phrygian mode.
+								This was submitted for an AP Music Theory assignment on using the church modes.
 							</p>
 							<audio controls>
 								<source src="res/audio/strange_little_tune.mp3">
@@ -511,7 +511,7 @@
 							<h3>Epilogue</h3>
 							<p>
 								I imagine this might be a sad ending to a movie? This was an exercise in voice-leading I
-								did for an AP Music Theory assignment.
+								did, also for an AP Music Theory assignment.
 							</p>
 							<audio controls>
 								<source src="res/audio/Epilogue.mp3">
@@ -540,45 +540,53 @@
 					</ul>
 				</section>
 			</div>
+			<span class="divider"></span>
 		</div>
 
 		<script>
-			let c = [...document.getElementById('page-select').querySelectorAll('input')];
+			let c = [...document.getElementById('page-select').querySelectorAll('span')];
+			let p = document.querySelectorAll('#sliding-pages > div');
+			let t = document.getElementById('header');
 			document.body.style.setProperty('--num-pages', c.length + '');
 			document.querySelectorAll('a, audio').forEach(i => i.setAttribute('tabindex', '-1'));
 
-			function updatePages(pageNumber = 0) {
-				if (pageNumber === +document.body.style.getPropertyValue('--page-number')) {
-					return;
-				}
-
-				document.body.style.setProperty('--page-number', `${pageNumber}`);
+			function updatePageNumber() {
+				p.forEach((s, i) => {
+					const rect = s.getBoundingClientRect();
+					if (rect.top - 10 <= t.getBoundingClientRect().bottom && rect.bottom + 10 >= t.getBoundingClientRect().bottom) {
+						document.body.style.setProperty('--page-number', `${i}`);
+					}
+				})
 			}
 
-			document.getElementById("page-select").onclick = () => {
-				let pageNumber = 0;
-				for (let i = 0; i < c.length; i++) {
-					if (c[i].checked) {
-						pageNumber = i;
-					}
-				}
+			document.body.onload = _ => {
+				window.onhashchange = (f => ((f() || true) && f))(() => {
+					const m = window.location.hash.match(/^#scrollto=(\w+)$/);
 
-				updatePages(pageNumber);
+					if (m) {
+						document.getElementById(m[1])?.scrollIntoView({
+							behavior: "smooth",
+							block: "start"
+						});
+					}
+				})
 			};
 
-			window.onhashchange = (f => ((f() || true) && f))(() => {
-				const m = window.location.hash.match(/^#page(\d+)(?:&(.*))?/)
-
-				if (m) {
-					updatePages(+m[1]);
-					if (m[2]) {
-						document.getElementById(m[2]).scrollIntoView({
-							behavior: "instant",
-							block: "start"
-						})
-					}
-				}
+			requestAnimationFrame(function f() {
+				updatePageNumber();
+				requestAnimationFrame(f);
 			})
+
+			function gotoPage(pageNumber = 0) {
+				p[pageNumber].scrollIntoView({
+					behavior: "smooth",
+					block: "start"
+				})
+			}
+
+			c.forEach((s, i) => s.onclick = () => {
+				gotoPage(i);
+			});
 		</script>
 	</body>
 </html>

@@ -29,7 +29,7 @@ body {
     line-height:    1.2;
 }
 
-section {
+section, .divider::after {
     width:     calc(100vw - 60px);
     max-width: 700px;
     position:  relative;
@@ -120,7 +120,7 @@ img#pfp {
 }
 
 /* Customize the label (the#page-select>label) */
-#page-select > label {
+#page-select > span {
     display:             flex;
     justify-content:     center;
     align-items:         center;
@@ -137,17 +137,8 @@ img#pfp {
     user-select:         none;
 }
 
-#page-select > label:hover {
+#page-select > span:hover {
     text-decoration: underline;
-}
-
-/* Hide the browser's default radio button */
-#page-select > input {
-    position: absolute;
-    opacity:  0;
-    cursor:   pointer;
-    height:   0;
-    width:    0;
 }
 
 #page-select::after {
@@ -178,7 +169,7 @@ h1 > div {
     justify-content: left;
 }
 
-.header > * {
+#header > * {
     flex-grow: 0;
 }
 
@@ -203,9 +194,9 @@ body {
 }
 
 #sliding-pages {
-    width:      calc(var(--num-pages) * 100vw);
-    display:    flex;
+    width:      100vw;
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 #sliding-pages > div {
@@ -214,24 +205,9 @@ body {
     display:        flex;
     flex-direction: column;
     align-items:    center;
-    transform:      translateX(calc(-100vw * (var(--page-number) - var(--num-pages) / 2 + 0.5)));
-    overflow-y:     scroll;
 }
 
-#sliding-pages > div > section::after {
-    display:         flex;
-    justify-content: center;
-    align-items:     center;
-    content:         "-";
-    color:           transparent;
-    user-select:     none;
-    overflow:        hidden;
-    width:           100%;
-    height:          1px;
-    margin-top:      20px;
-}
-
-#sliding-pages > div::-webkit-scrollbar {
+#sliding-pages::-webkit-scrollbar {
     display: none;
 }
 
@@ -266,4 +242,18 @@ body {
     height:   auto;
     position: relative;
     left:     calc((1 - var(--w)) * 50%);
+}
+
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 21px;
+    width: 100%;
+}
+
+.divider::after {
+    content: "";
+    height: 1px;
+    background: var(--fg-color);
 }
