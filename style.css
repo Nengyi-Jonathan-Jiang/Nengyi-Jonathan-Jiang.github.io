@@ -8,30 +8,50 @@
     src:         url("res/font/Nunito-VariableFont_wght.ttf");
 }
 
-* {
-    font-family: "Nunito", monospace;
-}
-
 :root {
     --highlight-color: #48f;
-    --dark-grey:       #181818;
     --bg-color:        #ffffff;
     --fg-color:        #000000;
+    --aux-color:       #000000;
+
+    --small-font-size: 14pt;
+    --base-font-size:  15pt;
+    --large-font-size: 20pt;
 }
+
+@media only screen and (max-device-width: 480px) {
+    --small-font-size: 10pt;
+    --base-font-size:  11pt;
+    --large-font-size: 14pt;
+}
+
+/*@media (prefers-color-scheme: dark) {*/
+/*    :root {*/
+/*        --highlight-color: #6cf;*/
+/*        --bg-color:        #181818;*/
+/*        --aux-color:       #555555;*/
+/*        --fg-color:        #ffffff;*/
+/*    }*/
+/*}*/
 
 body {
     background:     var(--bg-color);
+
     color:          var(--fg-color);
+    font-family:    "Nunito", monospace;
+    font-size:      var(--base-font-size);
+
     display:        flex;
     align-items:    center;
     flex-direction: column;
     text-align:     justify;
     line-height:    1.2;
+
 }
 
 section, .divider::after {
     width:     calc(100vw - 60px);
-    max-width: 700px;
+    max-width: calc(var(--large-font-size) * 35);
     position:  relative;
 }
 
@@ -43,10 +63,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-p, span {
-    font-size: 11pt;
 }
 
 p {
@@ -69,42 +85,60 @@ ul {
 }
 
 h2 {
-    border-bottom: 1px solid var(--fg-color);
+    border-bottom: 1px solid var(--aux-color);
 }
 
 h3 {
     margin-top: 0;
-    font-size:  18px;
+    font-size:  var(--large-font-size);
     text-align: left;
 }
 
 li {
-    outline:       1px solid var(--fg-color);
+    outline:       1px solid var(--aux-color);
     padding:       10px 10px 5px;
     margin-bottom: 20px;
     position:      relative;
 }
 
-li > a.link-to-github {
+li > a:is(.link-to-github, .link-to-project) {
     position:         absolute;
-    top:              9px;
-    right:            30px;
     display:          block;
-    width:            16px;
-    height:           16px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='14px' height='14px' viewBox='0 -0.5 48 48' version='1.1'%3E%3Cg id='Icons' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Color-' transform='translate(-700.000000, -560.000000)' fill='%2348F'%3E%3Cpath d='M723.9985,560 C710.746,560 700,570.787092 700,584.096644 C700,594.740671 706.876,603.77183 716.4145,606.958412 C717.6145,607.179786 718.0525,606.435849 718.0525,605.797328 C718.0525,605.225068 718.0315,603.710086 718.0195,601.699648 C711.343,603.155898 709.9345,598.469394 709.9345,598.469394 C708.844,595.686405 707.2705,594.94548 707.2705,594.94548 C705.091,593.450075 707.4355,593.480194 707.4355,593.480194 C709.843,593.650366 711.1105,595.963499 711.1105,595.963499 C713.2525,599.645538 716.728,598.58234 718.096,597.964902 C718.3135,596.407754 718.9345,595.346062 719.62,594.743683 C714.2905,594.135281 708.688,592.069123 708.688,582.836167 C708.688,580.205279 709.6225,578.054788 711.1585,576.369634 C710.911,575.759726 710.0875,573.311058 711.3925,569.993458 C711.3925,569.993458 713.4085,569.345902 717.9925,572.46321 C719.908,571.928599 721.96,571.662047 724.0015,571.651505 C726.04,571.662047 728.0935,571.928599 730.0105,572.46321 C734.5915,569.345902 736.603,569.993458 736.603,569.993458 C737.9125,573.311058 737.089,575.759726 736.8415,576.369634 C738.3805,578.054788 739.309,580.205279 739.309,582.836167 C739.309,592.091712 733.6975,594.129257 728.3515,594.725612 C729.2125,595.469549 729.9805,596.939353 729.9805,599.18773 C729.9805,602.408949 729.9505,605.006706 729.9505,605.797328 C729.9505,606.441873 730.3825,607.191834 731.6005,606.9554 C741.13,603.762794 748,594.737659 748,584.096644 C748,570.787092 737.254,560 723.9985,560' id='Github'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-size:  cover;
 }
 
+li > a.link-to-github {
+    top:              9px;
+    right:            30px;
+    width:            16px;
+    height:           16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='14px' height='14px' viewBox='0 -0.5 48 48' version='1.1'%3E%3Cg id='Icons' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Color-' transform='translate(-700.000000, -560.000000)' fill='%2348F'%3E%3Cpath d='M723.9985,560 C710.746,560 700,570.787092 700,584.096644 C700,594.740671 706.876,603.77183 716.4145,606.958412 C717.6145,607.179786 718.0525,606.435849 718.0525,605.797328 C718.0525,605.225068 718.0315,603.710086 718.0195,601.699648 C711.343,603.155898 709.9345,598.469394 709.9345,598.469394 C708.844,595.686405 707.2705,594.94548 707.2705,594.94548 C705.091,593.450075 707.4355,593.480194 707.4355,593.480194 C709.843,593.650366 711.1105,595.963499 711.1105,595.963499 C713.2525,599.645538 716.728,598.58234 718.096,597.964902 C718.3135,596.407754 718.9345,595.346062 719.62,594.743683 C714.2905,594.135281 708.688,592.069123 708.688,582.836167 C708.688,580.205279 709.6225,578.054788 711.1585,576.369634 C710.911,575.759726 710.0875,573.311058 711.3925,569.993458 C711.3925,569.993458 713.4085,569.345902 717.9925,572.46321 C719.908,571.928599 721.96,571.662047 724.0015,571.651505 C726.04,571.662047 728.0935,571.928599 730.0105,572.46321 C734.5915,569.345902 736.603,569.993458 736.603,569.993458 C737.9125,573.311058 737.089,575.759726 736.8415,576.369634 C738.3805,578.054788 739.309,580.205279 739.309,582.836167 C739.309,592.091712 733.6975,594.129257 728.3515,594.725612 C729.2125,595.469549 729.9805,596.939353 729.9805,599.18773 C729.9805,602.408949 729.9505,605.006706 729.9505,605.797328 C729.9505,606.441873 730.3825,607.191834 731.6005,606.9554 C741.13,603.762794 748,594.737659 748,584.096644 C748,570.787092 737.254,560 723.9985,560' id='Github'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
 li > a.link-to-project {
-    position:         absolute;
     top:              10px;
     right:            10px;
-    display:          block;
     width:            14px;
     height:           14px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16'%3E%3Cpath d='M 5 1 L 4 1 A 3 3 0 0 0 1 4 L 1 12 A 3 3 0 0 0 4 15 L 12 15 A 3 3 0 0 0 15 12 L 15 11' stroke='%2348f' stroke-linecap='square' stroke-linejoin='round' stroke-width='2' fill='none'/%3E%3Cpath d=' M 10 1 15 1 L 15 6 M 8 8 L 15 1' stroke='%2348f' stroke-linecap='square' stroke-width='2' fill='none'/%3E%3C/svg%3E");
-    background-size:  cover;
+}
+
+@supports (-webkit-mask: none) {
+    li > a:is(.link-to-github, .link-to-project) {
+        -webkit-mask-size: cover;
+        -webkit-mask-repeat: no-repeat;
+        background-color:  var(--highlight-color);
+    }
+
+    li > a.link-to-github {
+        background-image: none;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='14px' height='14px' viewBox='0 -0.5 48 48' version='1.1'%3E%3Cg id='Icons' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Color-' transform='translate(-700.000000, -560.000000)' fill='%2348F'%3E%3Cpath d='M723.9985,560 C710.746,560 700,570.787092 700,584.096644 C700,594.740671 706.876,603.77183 716.4145,606.958412 C717.6145,607.179786 718.0525,606.435849 718.0525,605.797328 C718.0525,605.225068 718.0315,603.710086 718.0195,601.699648 C711.343,603.155898 709.9345,598.469394 709.9345,598.469394 C708.844,595.686405 707.2705,594.94548 707.2705,594.94548 C705.091,593.450075 707.4355,593.480194 707.4355,593.480194 C709.843,593.650366 711.1105,595.963499 711.1105,595.963499 C713.2525,599.645538 716.728,598.58234 718.096,597.964902 C718.3135,596.407754 718.9345,595.346062 719.62,594.743683 C714.2905,594.135281 708.688,592.069123 708.688,582.836167 C708.688,580.205279 709.6225,578.054788 711.1585,576.369634 C710.911,575.759726 710.0875,573.311058 711.3925,569.993458 C711.3925,569.993458 713.4085,569.345902 717.9925,572.46321 C719.908,571.928599 721.96,571.662047 724.0015,571.651505 C726.04,571.662047 728.0935,571.928599 730.0105,572.46321 C734.5915,569.345902 736.603,569.993458 736.603,569.993458 C737.9125,573.311058 737.089,575.759726 736.8415,576.369634 C738.3805,578.054788 739.309,580.205279 739.309,582.836167 C739.309,592.091712 733.6975,594.129257 728.3515,594.725612 C729.2125,595.469549 729.9805,596.939353 729.9805,599.18773 C729.9805,602.408949 729.9505,605.006706 729.9505,605.797328 C729.9505,606.441873 730.3825,607.191834 731.6005,606.9554 C741.13,603.762794 748,594.737659 748,584.096644 C748,570.787092 737.254,560 723.9985,560' id='Github'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    li > a.link-to-project {
+        background-image: none;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16'%3E%3Cpath d='M 5 1 L 4 1 A 3 3 0 0 0 1 4 L 1 12 A 3 3 0 0 0 4 15 L 12 15 A 3 3 0 0 0 15 12 L 15 11' stroke='%2348f' stroke-linecap='square' stroke-linejoin='round' stroke-width='2' fill='none'/%3E%3Cpath d=' M 10 1 15 1 L 15 6 M 8 8 L 15 1' stroke='%2348f' stroke-linecap='square' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    }
 }
 
 img#pfp {
@@ -115,8 +149,8 @@ img#pfp {
     display:       flex;
     flex-grow:     1;
     position:      relative;
-    border-top:    1px solid var(--fg-color);
-    border-bottom: 1px solid var(--fg-color);
+    border-top:    1px solid var(--aux-color);
+    border-bottom: 1px solid var(--aux-color);
 }
 
 /* Customize the label (the#page-select>label) */
@@ -126,7 +160,6 @@ img#pfp {
     align-items:         center;
     position:            relative;
     cursor:              pointer;
-    font-size:           11pt;
     width:               6em;
     flex-grow:           1;
     text-align:          center;
@@ -147,7 +180,7 @@ img#pfp {
     display:        block;
     width:          calc(12px + 100% / var(--num-pages));
     height:         100%;
-    outline:        1px solid var(--fg-color);
+    outline:        1px solid var(--aux-color);
     outline-offset: -6px;
     left:           calc(-6px + 100% / var(--num-pages) * var(--page-number));
 }
@@ -160,7 +193,6 @@ h1 {
 
 h1 > div {
     font-family: "JetBrains Mono", monospace;
-    font-size:   11pt;
 }
 
 #left {
@@ -220,7 +252,7 @@ body {
 .project-tag {
     user-select:    none;
     margin-left:    10px;
-    font-size:      10pt;
+    font-size:      var(--small-font-size);
     background:     var(--highlight-color);
     color:          var(--bg-color);
     border-radius:  9pt;
@@ -245,15 +277,15 @@ body {
 }
 
 .divider {
-    display: flex;
+    display:         flex;
     justify-content: center;
-    align-items: center;
-    height: 21px;
-    width: 100%;
+    align-items:     center;
+    height:          21px;
+    width:           100%;
 }
 
 .divider::after {
-    content: "";
-    height: 1px;
-    background: var(--fg-color);
+    content:    "";
+    height:     1px;
+    background: var(--aux-color);
 }
