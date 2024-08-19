@@ -15,14 +15,16 @@
     --aux-color:       #000000;
 
     --small-font-size: 14pt;
-    --base-font-size:  15pt;
+    --font-size:  15pt;
     --large-font-size: 20pt;
 }
 
-@media only screen and (max-device-width: 480px) {
-    --small-font-size: 10pt;
-    --base-font-size:  11pt;
-    --large-font-size: 14pt;
+@media only screen and (max-device-width: 1080px) {
+    :root {
+        --small-font-size: 10pt;
+        --font-size:  11pt;
+        --large-font-size: 14pt;
+    }
 }
 
 /*@media (prefers-color-scheme: dark) {*/
@@ -39,7 +41,7 @@ body {
 
     color:          var(--fg-color);
     font-family:    "Nunito", monospace;
-    font-size:      var(--base-font-size);
+    font-size:      var(--font-size);
 
     display:        flex;
     align-items:    center;
@@ -50,7 +52,7 @@ body {
 }
 
 section, .divider::after {
-    width:     calc(100vw - 60px);
+    width:     calc(100vw - var(--font-size) * 4);
     max-width: calc(var(--large-font-size) * 35);
     position:  relative;
 }
@@ -66,16 +68,16 @@ a:hover {
 }
 
 p {
-    margin-top:    15px;
-    margin-bottom: 15px;
+    margin-top:    var(--font-size);
+    margin-bottom: var(--font-size);
 }
 
 p:first-child {
-    margin-top: 5px;
+    margin-top: calc(var(--font-size) / 3);
 }
 
 p:last-child {
-    margin-bottom: 5px;
+    margin-bottom: calc(var(--font-size) / 3);
 }
 
 ul {
@@ -96,15 +98,15 @@ h3 {
 
 li {
     outline:       1px solid var(--aux-color);
-    padding:       10px 10px 5px;
-    margin-bottom: 20px;
+    padding:       calc(var(--font-size) * 2 / 3) calc(var(--font-size) * 2 / 3) calc(var(--font-size) / 3);
+    margin-bottom: calc(var(--font-size) * 4 / 3);
     position:      relative;
 }
 
 li > a:is(.link-to-github, .link-to-project) {
-    position:         absolute;
-    display:          block;
-    background-size:  cover;
+    position:        absolute;
+    display:         block;
+    background-size: cover;
 }
 
 li > a.link-to-github {
@@ -125,18 +127,18 @@ li > a.link-to-project {
 
 @supports (-webkit-mask: none) {
     li > a:is(.link-to-github, .link-to-project) {
-        -webkit-mask-size: cover;
+        -webkit-mask-size:   cover;
         -webkit-mask-repeat: no-repeat;
-        background-color:  var(--highlight-color);
+        background-color:    var(--highlight-color);
     }
 
     li > a.link-to-github {
-        background-image: none;
+        background-image:   none;
         -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='14px' height='14px' viewBox='0 -0.5 48 48' version='1.1'%3E%3Cg id='Icons' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Color-' transform='translate(-700.000000, -560.000000)' fill='%2348F'%3E%3Cpath d='M723.9985,560 C710.746,560 700,570.787092 700,584.096644 C700,594.740671 706.876,603.77183 716.4145,606.958412 C717.6145,607.179786 718.0525,606.435849 718.0525,605.797328 C718.0525,605.225068 718.0315,603.710086 718.0195,601.699648 C711.343,603.155898 709.9345,598.469394 709.9345,598.469394 C708.844,595.686405 707.2705,594.94548 707.2705,594.94548 C705.091,593.450075 707.4355,593.480194 707.4355,593.480194 C709.843,593.650366 711.1105,595.963499 711.1105,595.963499 C713.2525,599.645538 716.728,598.58234 718.096,597.964902 C718.3135,596.407754 718.9345,595.346062 719.62,594.743683 C714.2905,594.135281 708.688,592.069123 708.688,582.836167 C708.688,580.205279 709.6225,578.054788 711.1585,576.369634 C710.911,575.759726 710.0875,573.311058 711.3925,569.993458 C711.3925,569.993458 713.4085,569.345902 717.9925,572.46321 C719.908,571.928599 721.96,571.662047 724.0015,571.651505 C726.04,571.662047 728.0935,571.928599 730.0105,572.46321 C734.5915,569.345902 736.603,569.993458 736.603,569.993458 C737.9125,573.311058 737.089,575.759726 736.8415,576.369634 C738.3805,578.054788 739.309,580.205279 739.309,582.836167 C739.309,592.091712 733.6975,594.129257 728.3515,594.725612 C729.2125,595.469549 729.9805,596.939353 729.9805,599.18773 C729.9805,602.408949 729.9505,605.006706 729.9505,605.797328 C729.9505,606.441873 730.3825,607.191834 731.6005,606.9554 C741.13,603.762794 748,594.737659 748,584.096644 C748,570.787092 737.254,560 723.9985,560' id='Github'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
     li > a.link-to-project {
-        background-image: none;
+        background-image:   none;
         -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewbox='0 0 16 16'%3E%3Cpath d='M 5 1 L 4 1 A 3 3 0 0 0 1 4 L 1 12 A 3 3 0 0 0 4 15 L 12 15 A 3 3 0 0 0 15 12 L 15 11' stroke='%2348f' stroke-linecap='square' stroke-linejoin='round' stroke-width='2' fill='none'/%3E%3Cpath d=' M 10 1 15 1 L 15 6 M 8 8 L 15 1' stroke='%2348f' stroke-linecap='square' stroke-width='2' fill='none'/%3E%3C/svg%3E");
     }
 }
@@ -163,11 +165,12 @@ img#pfp {
     width:               6em;
     flex-grow:           1;
     text-align:          center;
-    padding:             8px 10px;
+    padding:             calc(var(--font-size) * 0.6) calc(var(--font-size) * 2 / 3);
     -webkit-user-select: none;
     -moz-user-select:    none;
     -ms-user-select:     none;
     user-select:         none;
+    font-size: min(var(--font-size), 5vw);
 }
 
 #page-select > span:hover {
@@ -178,11 +181,11 @@ img#pfp {
     content:        "";
     position:       absolute;
     display:        block;
-    width:          calc(12px + 100% / var(--num-pages));
+    width:          calc(var(--font-size) * 0.8 + 100% / var(--num-pages));
     height:         100%;
     outline:        1px solid var(--aux-color);
-    outline-offset: -6px;
-    left:           calc(-6px + 100% / var(--num-pages) * var(--page-number));
+    outline-offset: calc(var(--font-size) * -0.6);
+    left:           calc(var(--font-size) * -0.6 + 100% / var(--num-pages) * var(--page-number));
 }
 
 h1 {
@@ -190,11 +193,11 @@ h1 {
     margin-bottom: 10px;
     font-family:   "JetBrains Mono", monospace;
 
-    font-size: min(calc(var(--base-font-size) * 1.5), 1.1em)
+    font-size:     min(calc(var(--font-size) * 1.5), 6vw)
 }
 
-h1 > div {
-    font-family: "JetBrains Mono", monospace;
+h1 > span {
+    display: block;
 }
 
 #left {
@@ -216,7 +219,7 @@ body {
     --page-number: 0;
     --num-pages:   1;
     margin:        0;
-    padding:       13px;
+    padding:       13px 13px 0;
     position:      absolute;
     top:           0;
     left:          0;
@@ -228,6 +231,7 @@ body {
 }
 
 #sliding-pages {
+    padding-bottom: 10px;
     width:      100vw;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -257,9 +261,9 @@ body {
     font-size:      var(--small-font-size);
     background:     var(--highlight-color);
     color:          var(--bg-color);
-    border-radius:  9pt;
-    padding:        1pt 5pt;
-    vertical-align: 1.5pt;
+    border-radius:  var(--large-font-size);
+    padding:        1pt calc(var(--small-font-size) / 2);
+    vertical-align: calc(var(--small-font-size) * 0.15);
     white-space:    nowrap;
 }
 
@@ -267,7 +271,7 @@ body {
     display:    inline-block;
     width:      100%;
     text-align: center;
-    margin:     5px;
+    margin:     calc(var(--font-size) / 3);
 }
 
 .project-img {
@@ -282,7 +286,7 @@ body {
     display:         flex;
     justify-content: center;
     align-items:     center;
-    height:          21px;
+    height:          calc(var(--small-font-size) * 1.4);
     width:           100%;
 }
 
