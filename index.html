@@ -587,6 +587,16 @@
 			c.forEach((s, i) => s.onclick = () => {
 				gotoPage(i);
 			});
+
+			document.querySelectorAll('audio').forEach(i => {
+				i.onplay = _ => {
+					document.querySelectorAll('audio').forEach(j => {
+						if(i !== j) {
+							j.pause();
+						}
+					})
+				}
+			})
 		</script>
 	</body>
 </html>
