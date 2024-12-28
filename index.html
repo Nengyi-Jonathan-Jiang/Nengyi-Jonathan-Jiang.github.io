@@ -7,6 +7,17 @@
 		<title>NJonathanJiang</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
 		<link rel="icon" type="image/x-icon" href="res/favicon.ico">
+
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="https://nengyi-jonathan-jiang.github.io/"/>
+		<meta property="og:title" content="NJonathanJiang"/>
+		<meta property="og:image" content="res/images/thumbnail.png"/>
+		<meta property="og:description" content="NJonathanJiang's personal website"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:title" content="NJonathanJiang"/>
+		<meta name="twitter:description" content="NJonathanJiang's personal website"/>
+		<meta name="twitter:url" content="https://nengyi-jonathan-jiang.github.io/"/>
+		<meta name="twitter:image" content="res/images/thumbnail.png"/>
 	</head>
 	<body>
 		<section id="header">
@@ -84,9 +95,11 @@
 								in parallel on the GPU to determine an output color for each pixel) as well as
 								"scriptable uniforms" which allow the user to programmatically update uniforms (global
 								constants in GLSL) using Javascript. See example code
-								<a href="https://github.com/Nengyi-Jonathan-Jiang/shader-playground-2/blob/master/examples/mandelbrot.txt" target="_blank">here</a>
+								<a href="https://github.com/Nengyi-Jonathan-Jiang/shader-playground-2/blob/master/examples/mandelbrot.txt"
+								   target="_blank">here</a>
 								and
-								<a href="https://github.com/Nengyi-Jonathan-Jiang/shader-playground-2/blob/master/examples/hilbert.txt" target="_blank">here</a>
+								<a href="https://github.com/Nengyi-Jonathan-Jiang/shader-playground-2/blob/master/examples/hilbert.txt"
+								   target="_blank">here</a>
 								.
 							</p>
 							<img class="project-img"
@@ -589,17 +602,17 @@
 		</div>
 
 		<script>
-			let c = [...document.getElementById('page-select').querySelectorAll('span')];
+			let c = [ ...document.getElementById('page-select').querySelectorAll('span') ];
 			let p = document.querySelectorAll('#sliding-pages > div');
 			let t = document.getElementById('header');
-			document.body.style.setProperty('--num-pages', c.length + '');
+			document.body.style.setProperty('--njj-num-pages', c.length + '');
 			document.querySelectorAll('a, audio').forEach(i => i.setAttribute('tabindex', '-1'));
 
 			function updatePageNumber() {
 				p.forEach((s, i) => {
 					const rect = s.getBoundingClientRect();
 					if (rect.top - 10 <= t.getBoundingClientRect().bottom && rect.bottom + 10 >= t.getBoundingClientRect().bottom) {
-						document.body.style.setProperty('--page-number', `${i}`);
+						document.body.style.setProperty('--njj-current-page-number', `${ i }`);
 					}
 				})
 			}
@@ -636,7 +649,7 @@
 			document.querySelectorAll('audio').forEach(i => {
 				i.onplay = _ => {
 					document.querySelectorAll('audio').forEach(j => {
-						if(i !== j) {
+						if (i !== j) {
 							j.pause();
 						}
 					})

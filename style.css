@@ -9,39 +9,43 @@
 }
 
 :root {
-    --highlight-color: #48f;
-    --bg-color:        #ffffff;
-    --fg-color:        #000000;
-    --aux-color:       #000000;
+    /*
+     * Due to conflicts with chrome extensions (Web Highlights - PDF & Web Highlighter), I have to
+     * prefix all of my CSS variable names to avoid conflict.
+     */
+    --njj-highlight-color: #48f;
+    --njj-bg-color:        #ffffff;
+    --njj-fg-color:        #000000;
+    --njj-aux-color:       #000000;
 
-    --small-font-size: 14pt;
-    --font-size:  15pt;
-    --large-font-size: 20pt;
+    --njj-small-font-size: 14pt;
+    --njj-font-size:  15pt;
+    --njj-large-font-size: 20pt;
 }
 
 @media only screen and (max-device-width: 1080px) {
     :root {
-        --small-font-size: 10pt;
-        --font-size:  11pt;
-        --large-font-size: 14pt;
+        --njj-small-font-size: 10pt;
+        --njj-font-size:  11pt;
+        --njj-large-font-size: 14pt;
     }
 }
 
 /*@media (prefers-color-scheme: dark) {*/
 /*    :root {*/
-/*        --highlight-color: #6cf;*/
-/*        --bg-color:        #181818;*/
-/*        --aux-color:       #555555;*/
-/*        --fg-color:        #ffffff;*/
+/*        --njj-highlight-color: #6cf;*/
+/*        --njj-bg-color:        #181818;*/
+/*        --njj-aux-color:       #555555;*/
+/*        --njj-fg-color:        #ffffff;*/
 /*    }*/
 /*}*/
 
 body {
-    background:     var(--bg-color);
+    background:     var(--njj-bg-color);
 
-    color:          var(--fg-color);
+    color:          var(--njj-fg-color);
     font-family:    "Nunito", monospace;
-    font-size:      var(--font-size);
+    font-size:      var(--njj-font-size);
 
     display:        flex;
     align-items:    center;
@@ -52,13 +56,13 @@ body {
 }
 
 section, .divider::after {
-    width:     calc(100vw - var(--font-size) * 4);
-    max-width: calc(var(--large-font-size) * 35);
+    width:     calc(100vw - var(--njj-font-size) * 4);
+    max-width: calc(var(--njj-large-font-size) * 35);
     position:  relative;
 }
 
 a {
-    color:           var(--highlight-color);
+    color:           var(--njj-highlight-color);
     text-decoration: none;
     font-weight:     normal;
 }
@@ -68,16 +72,16 @@ a:hover {
 }
 
 p {
-    margin-top:    var(--font-size);
-    margin-bottom: var(--font-size);
+    margin-top:    var(--njj-font-size);
+    margin-bottom: var(--njj-font-size);
 }
 
 p:first-child {
-    margin-top: calc(var(--font-size) / 3);
+    margin-top: calc(var(--njj-font-size) / 3);
 }
 
 p:last-child {
-    margin-bottom: calc(var(--font-size) / 3);
+    margin-bottom: calc(var(--njj-font-size) / 3);
 }
 
 ul {
@@ -87,19 +91,20 @@ ul {
 }
 
 h2 {
-    border-bottom: 1px solid var(--aux-color);
+    border-bottom: 1px solid var(--njj-aux-color);
 }
 
 h3 {
     margin-top: 0;
-    font-size:  var(--large-font-size);
+    padding-right: 40px;
+    font-size:  var(--njj-large-font-size);
     text-align: left;
 }
 
 li {
-    outline:       1px solid var(--aux-color);
-    padding:       calc(var(--font-size) * 2 / 3) calc(var(--font-size) * 2 / 3) calc(var(--font-size) / 3);
-    margin-bottom: calc(var(--font-size) * 4 / 3);
+    outline:       1px solid var(--njj-aux-color);
+    padding:       calc(var(--njj-font-size) * 2 / 3) calc(var(--njj-font-size) * 2 / 3) calc(var(--njj-font-size) / 3);
+    margin-bottom: calc(var(--njj-font-size) * 4 / 3);
     position:      relative;
 }
 
@@ -129,7 +134,7 @@ li > a.link-to-project {
     li > a:is(.link-to-github, .link-to-project) {
         -webkit-mask-size:   cover;
         -webkit-mask-repeat: no-repeat;
-        background-color:    var(--highlight-color);
+        background-color:    var(--njj-highlight-color);
     }
 
     li > a.link-to-github {
@@ -151,8 +156,8 @@ img#pfp {
     display:       flex;
     flex-grow:     1;
     position:      relative;
-    border-top:    1px solid var(--aux-color);
-    border-bottom: 1px solid var(--aux-color);
+    border-top:    1px solid var(--njj-aux-color);
+    border-bottom: 1px solid var(--njj-aux-color);
 }
 
 /* Customize the label (the#page-select>label) */
@@ -165,12 +170,12 @@ img#pfp {
     width:               6em;
     flex-grow:           1;
     text-align:          center;
-    padding:             calc(var(--font-size) * 0.6) calc(var(--font-size) * 2 / 3);
+    padding:             calc(var(--njj-font-size) * 0.6) calc(var(--njj-font-size) * 2 / 3);
     -webkit-user-select: none;
     -moz-user-select:    none;
     -ms-user-select:     none;
     user-select:         none;
-    font-size: min(var(--font-size), 5vw);
+    font-size: min(var(--njj-font-size), 5vw);
 }
 
 #page-select > span:hover {
@@ -181,11 +186,11 @@ img#pfp {
     content:        "";
     position:       absolute;
     display:        block;
-    width:          calc(var(--font-size) * 0.8 + 100% / var(--num-pages));
+    width:          calc(var(--njj-font-size) * 0.8 + 100% / var(--njj-num-pages));
     height:         100%;
-    outline:        1px solid var(--aux-color);
-    outline-offset: calc(var(--font-size) * -0.6);
-    left:           calc(var(--font-size) * -0.6 + 100% / var(--num-pages) * var(--page-number));
+    outline:        1px solid var(--njj-aux-color);
+    outline-offset: calc(var(--njj-font-size) * -0.6);
+    left:           calc(var(--njj-font-size) * -0.6 + 100% / var(--njj-num-pages) * var(--njj-current-page-number));
 }
 
 h1 {
@@ -193,7 +198,7 @@ h1 {
     margin-bottom: 10px;
     font-family:   "JetBrains Mono", monospace;
 
-    font-size:     min(calc(var(--font-size) * 1.5), 6vw)
+    font-size:     min(calc(var(--njj-font-size) * 1.5), 6vw)
 }
 
 h1 > span {
@@ -216,8 +221,8 @@ img#pfp {
 }
 
 body {
-    --page-number: 0;
-    --num-pages:   1;
+    --njj-current-page-number: 0;
+    --njj-num-pages:   1;
     margin:        0;
     padding:       13px 13px 0;
     position:      absolute;
@@ -226,7 +231,7 @@ body {
     width:         100vw;
     height:        100vh;
     overflow:      hidden;
-    transition:    --page-number .5s;
+    transition:    --njj-current-page-number .5s;
     box-sizing:    border-box;
 }
 
@@ -249,7 +254,7 @@ body {
     display: none;
 }
 
-@property --page-number {
+@property --njj-current-page-number {
     syntax:        "<number>";
     inherits:      true;
     initial-value: 0;
@@ -258,12 +263,12 @@ body {
 .project-tag {
     user-select:    none;
     margin-left:    10px;
-    font-size:      var(--small-font-size);
-    background:     var(--highlight-color);
-    color:          var(--bg-color);
-    border-radius:  var(--large-font-size);
-    padding:        1pt calc(var(--small-font-size) / 2);
-    vertical-align: calc(var(--small-font-size) * 0.15);
+    font-size:      var(--njj-small-font-size);
+    background:     var(--njj-highlight-color);
+    color:          var(--njj-bg-color);
+    border-radius:  var(--njj-large-font-size);
+    padding:        1pt calc(var(--njj-small-font-size) / 2);
+    vertical-align: calc(var(--njj-small-font-size) * 0.15);
     white-space:    nowrap;
 }
 
@@ -271,10 +276,11 @@ body {
     display:    inline-block;
     width:      100%;
     text-align: center;
-    margin:     calc(var(--font-size) / 3);
+    margin:     calc(var(--njj-font-size) / 3);
 }
 
 .project-img {
+    /* This shouldn't conflict with anyone... hopefully? */
     --w:      1;
     width:    calc(var(--w) * 100%);
     height:   auto;
@@ -286,14 +292,14 @@ body {
     display:         flex;
     justify-content: center;
     align-items:     center;
-    height:          calc(var(--small-font-size) * 1.4);
+    height:          calc(var(--njj-small-font-size) * 1.4);
     width:           100%;
 }
 
 .divider::after {
     content:    "";
     height:     1px;
-    background: var(--aux-color);
+    background: var(--njj-aux-color);
 }
 
 audio {
