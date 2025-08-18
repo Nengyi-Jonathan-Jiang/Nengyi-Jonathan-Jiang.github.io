@@ -56,7 +56,8 @@
 					<h2> Coding Experience </h2>
 					<p>
 						I have been programing in Python for 8 years, Java for 6 years, HTML/CSS/JS for 5 years, and C++
-						for 5 years. In addition, I have a little bit of experience with C#, MATLAB, Rust, and a few other
+						for 5 years. In addition, I have a little bit of experience with C#, MATLAB, Rust, and a few
+						other
 						languages. Check out some of <a href="./#scrollto=projects">my projects</a>! Or, take a look at
 						my <a href="https://github.com/Nengyi-Jonathan-Jiang" target="_blank">GitHub profile</a>
 					</p>
@@ -126,8 +127,7 @@
 						</li>
 						<li id="GoCapyGo">
 							<h3><a href="https://nengyi-jonathan-jiang.github.io/Go-Capy-Go"
-								   target="_blank">Go
-								Capy Go!</a>
+								   target="_blank">Go Capy Go!</a>
 								<span class="project-tag">Game</span>
 								<span class="project-tag">Supports Mobile</span>
 							</h3>
@@ -135,9 +135,9 @@
 								A retro-style platformer/puzzle game that will make you think, hard. Get the capybara to
 								the candy with the help of a ghostly helper! I made this with the help of
 								<a href="https://github.com/EvuhLi " target="_blank">Eva Li</a>,
-								<a href="https://github.com/RouRai " target="_blank">Rounak Rai</a>, and
-								<a href="https://github.com/Santiago11234 " target="_blank">Santiago
-									Espinoza</a>
+								<a href="https://github.com/RouRai " target="_blank">Rounak Rai</a>,
+								and
+								<a href="https://github.com/Santiago11234 " target="_blank">Santiago Espinoza</a>
 								for a local game jam.
 							</p>
 							<img class="project-img"
@@ -145,6 +145,19 @@
 								 alt="Sorry, the image didn't load :(">
 							<span class="project-img-caption">
 								The final and hardest level in the game, "Remote control".
+							</span>
+							<img class="project-img"
+								 src="res/images/go-capy-go-puzzle-creator.png"
+								 alt="Sorry, the image didn't load :(">
+							<span>
+								I made a user interface for designing levels to help my team more easily design levels.
+								It generates code that I can copy-paste into a hard-coded (I should make a better
+								system) script with all the levels in it. You can use it too,
+								<a href="https://nengyi-jonathan-jiang.github.io/Go-Capy-Go/puzzle-creator"
+								   target="_blank">here</a>. Right-click on the level preview to play. Since the
+								preview's url contains the level code in the query (again, I should make a better
+								system), you can even share it, though I suppose it could be dangerous if someone
+								embedded malicious javascript code in a url shared this way. Oops.
 							</span>
 							<a href="https://github.com/Nengyi-Jonathan-Jiang/Go-Capy-Go/"
 							   class="link-to-github"
@@ -676,7 +689,7 @@
 		</div>
 
 		<script>
-			let c = [ ...document.getElementById('page-select').querySelectorAll('span') ];
+			let c = [...document.getElementById('page-select').querySelectorAll('span')];
 			let p = document.querySelectorAll('#sliding-pages > div');
 			let t = document.getElementById('header');
 			document.body.style.setProperty('--njj-num-pages', c.length + '');
@@ -686,7 +699,7 @@
 				p.forEach((s, i) => {
 					const rect = s.getBoundingClientRect();
 					if (rect.top - 10 <= t.getBoundingClientRect().bottom && rect.bottom + 10 >= t.getBoundingClientRect().bottom) {
-						document.body.style.setProperty('--njj-current-page-number', `${ i }`);
+						document.body.style.setProperty('--njj-current-page-number', `${i}`);
 					}
 				})
 			}
